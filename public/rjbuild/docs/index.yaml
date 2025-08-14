@@ -53,6 +53,9 @@ renderView:
       ### Integrations
 
       - **Chart.js Integration** - Create interactive charts and visualizations
+      - **Bootstrap Components** - Pre-built Bootstrap UI components
+        - Breadcrumbs - Navigation breadcrumbs with dynamic data
+        - Carousel - Image carousel with controls and indicators
 
   - type: Markdown
     content: |

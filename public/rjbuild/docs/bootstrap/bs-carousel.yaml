@@ -1,0 +1,415 @@
+renderView:
+  - type: h2
+    content: "Carousel Bootstrap"
+  
+  # Vue d'ensemble
+  - type: h3
+    content: "Vue d'ensemble"
+  - type: p
+    content: "Documentation et exemples pour utiliser les carousels Bootstrap avec slides automatiques, contrôles et indicateurs."
+  
+  # Carousel de base avec auto-slide
+  - type: h3
+    content: "Carousel de base avec auto-slide"
+  - type: p
+    content: "Un carousel simple qui défile automatiquement toutes les 5 secondes."
+  
+  - type: div
+    attributes:
+      id: "carouselExampleCaptions"
+      class: "carousel slide"
+      data-bs-ride: "carousel"
+      data-bs-interval: "5000"
+    content:
+      # Indicateurs
+      - type: div
+        attributes:
+          class: "carousel-indicators"
+        content:
+          - type: button
+            attributes:
+              type: "button"
+              data-bs-target: "#carouselExampleCaptions"
+              data-bs-slide-to: "0"
+              class: "active"
+              aria-current: "true"
+              aria-label: "Slide 1"
+          - type: button
+            attributes:
+              type: "button"
+              data-bs-target: "#carouselExampleCaptions"
+              data-bs-slide-to: "1"
+              aria-label: "Slide 2"
+          - type: button
+            attributes:
+              type: "button"
+              data-bs-target: "#carouselExampleCaptions"
+              data-bs-slide-to: "2"
+              aria-label: "Slide 3"
+      
+      # Slides
+      - type: div
+        attributes:
+          class: "carousel-inner"
+        content:
+          - type: div
+            attributes:
+              class: "carousel-item active"
+            content:
+              - type: img
+                attributes:
+                  src: "https://picsum.photos/800/400?random=1"
+                  class: "d-block w-100"
+                  alt: "First slide"
+                  style:
+                    height: "400px"
+                    objectFit: "cover"
+              - type: div
+                attributes:
+                  class: "carousel-caption d-none d-md-block"
+                content:
+                  - type: h5
+                    content: "First slide label"
+                  - type: p
+                    content: "Some representative placeholder content for the first slide."
+          - type: div
+            attributes:
+              class: "carousel-item"
+            content:
+              - type: img
+                attributes:
+                  src: "https://picsum.photos/800/400?random=2"
+                  class: "d-block w-100"
+                  alt: "Second slide"
+                  style:
+                    height: "400px"
+                    objectFit: "cover"
+              - type: div
+                attributes:
+                  class: "carousel-caption d-none d-md-block"
+                content:
+                  - type: h5
+                    content: "Second slide label"
+                  - type: p
+                    content: "Some representative placeholder content for the second slide."
+          - type: div
+            attributes:
+              class: "carousel-item"
+            content:
+              - type: img
+                attributes:
+                  src: "https://picsum.photos/800/400?random=3"
+                  class: "d-block w-100"
+                  alt: "Third slide"
+                  style:
+                    height: "400px"
+                    objectFit: "cover"
+              - type: div
+                attributes:
+                  class: "carousel-caption d-none d-md-block"
+                content:
+                  - type: h5
+                    content: "Third slide label"
+                  - type: p
+                    content: "Some representative placeholder content for the third slide."
+      
+      # Contrôle précédent
+      - type: button
+        attributes:
+          class: "carousel-control-prev"
+          type: "button"
+          data-bs-target: "#carouselExampleCaptions"
+          data-bs-slide: "prev"
+        content:
+          - type: span
+            attributes:
+              class: "carousel-control-prev-icon"
+              aria-hidden: "true"
+          - type: span
+            attributes:
+              class: "visually-hidden"
+            content: "Previous"
+      
+      # Contrôle suivant
+      - type: button
+        attributes:
+          class: "carousel-control-next"
+          type: "button"
+          data-bs-target: "#carouselExampleCaptions"
+          data-bs-slide: "next"
+        content:
+          - type: span
+            attributes:
+              class: "carousel-control-next-icon"
+              aria-hidden: "true"
+          - type: span
+            attributes:
+              class: "visually-hidden"
+            content: "Next"
+
+  # Code d'initialisation JavaScript
+  - type: h3
+    content: "Initialisation JavaScript"
+  - type: p
+    content: "Pour que les carousels fonctionnent, Bootstrap JavaScript doit être chargé. Voici le code d'initialisation :"
+  
+  - type: pre
+    attributes:
+      class: "bg-light p-3 rounded"
+    content: |
+      // Initialisation automatique (recommandé)
+      // Bootstrap 5 initialise automatiquement les carousels
+      
+      // Ou initialisation manuelle
+      var carouselElementList = [].slice.call(document.querySelectorAll('.carousel'))
+      var carouselList = carouselElementList.map(function (carouselEl) {
+        return new bootstrap.Carousel(carouselEl)
+      })
+      
+      // Options disponibles
+      var myCarousel = new bootstrap.Carousel(document.getElementById('carouselExampleCaptions'), {
+        interval: 5000,        // Intervalle entre les slides (ms)
+        wrap: true,            // Boucle infinie
+        keyboard: true,        // Navigation clavier
+        pause: 'hover',        // Pause au survol
+        ride: 'carousel'       // Démarrage automatique
+      })
+
+  # Test JavaScript dans la console
+  - type: h3
+    content: "Test JavaScript"
+  - type: p
+    content: "Copiez et collez ce code dans la console du navigateur pour tester :"
+  
+  - type: pre
+    attributes:
+      class: "bg-light p-3 rounded"
+    content: |
+      // Test 1: Vérifier si Bootstrap est chargé
+      console.log('Bootstrap:', typeof bootstrap);
+      
+      // Test 2: Vérifier si le carousel existe
+      var carousel = document.getElementById('carouselExampleCaptions');
+      console.log('Carousel element:', carousel);
+      
+      // Test 3: Vérifier les indicateurs
+      var indicators = carousel.querySelectorAll('.carousel-indicators button');
+      console.log('Indicators:', indicators.length);
+      
+      // Test 4: Vérifier les slides
+      var slides = carousel.querySelectorAll('.carousel-item');
+      console.log('Slides:', slides.length);
+      
+      // Test 5: Initialiser manuellement le carousel
+      if (carousel && typeof bootstrap !== 'undefined') {
+        var bsCarousel = new bootstrap.Carousel(carousel);
+        console.log('Carousel initialized:', bsCarousel);
+      }
+
+  # Affichage du code Reactive-JSON
+  - type: RjBuildDescriber
+    title: "Reactive-JSON build"
+    description:
+      - type: div
+        content: Carousel Bootstrap dynamique avec templates pour les indicateurs et slides.
+    toDescribe:
+      renderView:
+        - type: h2
+          content: "Carousel Bootstrap"
+        
+        # Carousel Bootstrap avec indicateurs, contrôles et captions
+        - type: div
+          attributes:
+            id: "carouselExampleDescriber"
+            class: "carousel slide"
+            data-bs-ride: "carousel"
+            data-bs-interval: "5000"
+          content:
+            # Indicateurs
+            - type: div
+              attributes:
+                class: "carousel-indicators"
+              content:
+                - type: button
+                  attributes:
+                    type: "button"
+                    data-bs-target: "#carouselExampleDescriber"
+                    data-bs-slide-to: "0"
+                    class: "active"
+                    aria-current: "true"
+                    aria-label: "Slide 1"
+                - type: button
+                  attributes:
+                    type: "button"
+                    data-bs-target: "#carouselExampleDescriber"
+                    data-bs-slide-to: "1"
+                    aria-label: "Slide 2"
+                - type: button
+                  attributes:
+                    type: "button"
+                    data-bs-target: "#carouselExampleDescriber"
+                    data-bs-slide-to: "2"
+                    aria-label: "Slide 3"
+            
+            # Slides
+            - type: div
+              attributes:
+                class: "carousel-inner"
+              content:
+                - type: div
+                  attributes:
+                    class: "carousel-item active"
+                  content:
+                    - type: img
+                      attributes:
+                        src: "https://picsum.photos/800/400?random=1"
+                        class: "d-block w-100"
+                        alt: "First slide"
+                        style:
+                          height: "400px"
+                          objectFit: "cover"
+                    - type: div
+                      attributes:
+                        class: "carousel-caption d-none d-md-block"
+                      content:
+                        - type: h5
+                          content: "First slide label"
+                        - type: p
+                          content: "Some representative placeholder content for the first slide."
+                - type: div
+                  attributes:
+                    class: "carousel-item"
+                  content:
+                    - type: img
+                      attributes:
+                        src: "https://picsum.photos/800/400?random=2"
+                        class: "d-block w-100"
+                        alt: "Second slide"
+                        style:
+                          height: "400px"
+                          objectFit: "cover"
+                    - type: div
+                      attributes:
+                        class: "carousel-caption d-none d-md-block"
+                      content:
+                        - type: h5
+                          content: "Second slide label"
+                        - type: p
+                          content: "Some representative placeholder content for the second slide."
+                - type: div
+                  attributes:
+                    class: "carousel-item"
+                  content:
+                    - type: img
+                      attributes:
+                        src: "https://picsum.photos/800/400?random=3"
+                        class: "d-block w-100"
+                        alt: "Third slide"
+                        style:
+                          height: "400px"
+                          objectFit: "cover"
+                    - type: div
+                      attributes:
+                        class: "carousel-caption d-none d-md-block"
+                      content:
+                        - type: h5
+                          content: "Third slide label"
+                        - type: p
+                          content: "Some representative placeholder content for the third slide."
+            
+            # Contrôle précédent
+            - type: button
+              attributes:
+                class: "carousel-control-prev"
+                type: "button"
+                data-bs-target: "#carouselExampleDescriber"
+                data-bs-slide: "prev"
+              content:
+                - type: span
+                  attributes:
+                    class: "carousel-control-prev-icon"
+                    aria-hidden: "true"
+                - type: span
+                  attributes:
+                    class: "visually-hidden"
+                  content: "Previous"
+            
+            # Contrôle suivant
+            - type: button
+              attributes:
+                class: "carousel-control-next"
+                type: "button"
+                data-bs-target: "#carouselExampleDescriber"
+                data-bs-slide: "next"
+              content:
+                - type: span
+                  attributes:
+                    class: "carousel-control-next-icon"
+                    aria-hidden: "true"
+                - type: span
+                  attributes:
+                    class: "visually-hidden"
+                  content: "Next"
+
+templates:
+  indicatorTemplate:
+    type: button
+    attributes:
+      type: "button"
+      data-bs-target: "#carouselExampleCaptions"
+      data-bs-slide-to: ~.index
+      class: ~.indicator_class
+      aria_current: ~.aria_current
+      aria-label: ~.aria_label
+
+  slideTemplate:
+    type: div
+    attributes:
+      class: ~.slide_class
+    content:
+      - type: img
+        attributes:
+          src: ~.image_url
+          class: "d-block w-100"
+          alt: ~.image_alt
+          style:
+            height: "400px"
+            objectFit: "cover"
+      - type: div
+        attributes:
+          class: "carousel-caption d-none d-md-block"
+        content:
+          - type: h5
+            content: ~.title
+          - type: p
+            content: ~.description
+
+data:
+  slides:
+    - index: 0
+      indicator_class: "active"
+      aria_current: "true"
+      aria_label: "Slide 1"
+      slide_class: "carousel-item active"
+      image_url: "https://picsum.photos/800/400?random=1"
+      image_alt: "First slide"
+      title: "First slide label"
+      description: "Some representative placeholder content for the first slide."
+    - index: 1
+      indicator_class: ""
+      aria_current: ""
+      aria_label: "Slide 2"
+      slide_class: "carousel-item"
+      image_url: "https://picsum.photos/800/400?random=2"
+      image_alt: "Second slide"
+      title: "Second slide label"
+      description: "Some representative placeholder content for the second slide."
+    - index: 2
+      indicator_class: ""
+      aria_current: ""
+      aria_label: "Slide 3"
+      slide_class: "carousel-item"
+      image_url: "https://picsum.photos/800/400?random=3"
+      image_alt: "Third slide"
+      title: "Third slide label"
+      description: "Some representative placeholder content for the third slide." 

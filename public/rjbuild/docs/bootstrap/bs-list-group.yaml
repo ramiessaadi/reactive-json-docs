@@ -1,0 +1,419 @@
+renderView:
+  - type: h2
+    content: "List Group Bootstrap" 
+  # Affichage du code Reactive-JSON
+  - type: RjBuildDescriber
+    title: "Reactive-JSON build"
+    description:
+      - type: div
+        content: List Group Bootstrap avec différents types de contenu, couleurs et interactions.
+    toDescribe:
+      renderView:
+        - type: h2
+          content: "List Group Bootstrap"
+        
+        # Vue d'ensemble
+        - type: h3
+          content: "Vue d'ensemble"
+        - type: p
+          content: "Les list groups sont un composant flexible et puissant pour afficher une série de contenu. Modifiez et étendez-les pour prendre en charge tout contenu à l'intérieur."
+        
+        # Exemple de base
+        - type: h3
+          content: "Exemple de base"
+        - type: p
+          content: "La classe .list-group la plus basique est un conteneur ul avec des éléments li à l'intérieur."
+        
+        - type: ul
+          attributes:
+            class: "list-group"
+          content:
+            - type: li
+              attributes:
+                class: "list-group-item"
+              content: "Cras justo odio"
+            - type: li
+              attributes:
+                class: "list-group-item"
+              content: "Dapibus ac facilisis in"
+            - type: li
+              attributes:
+                class: "list-group-item"
+              content: "Morbi leo risus"
+            - type: li
+              attributes:
+                class: "list-group-item"
+              content: "Porta ac consectetur ac"
+            - type: li
+              attributes:
+                class: "list-group-item"
+              content: "Vestibulum at eros"
+
+        # Éléments actifs et désactivés
+        - type: h3
+          content: "Éléments actifs et désactivés"
+        - type: p
+          content: "Ajoutez .active pour indiquer l'état actif et .disabled pour désactiver un élément."
+        
+        - type: ul
+          attributes:
+            class: "list-group"
+          content:
+            - type: li
+              attributes:
+                class: "list-group-item active"
+                aria-current: "true"
+              content: "Cras justo odio"
+            - type: li
+              attributes:
+                class: "list-group-item"
+              content: "Dapibus ac facilisis in"
+            - type: li
+              attributes:
+                class: "list-group-item"
+              content: "Morbi leo risus"
+            - type: li
+              attributes:
+                class: "list-group-item disabled"
+                aria-disabled: "true"
+              content: "Porta ac consectetur ac"
+            - type: li
+              attributes:
+                class: "list-group-item"
+              content: "Vestibulum at eros"
+
+        # Liens et boutons
+        - type: h3
+          content: "Liens et boutons"
+        - type: p
+          content: "Utilisez <a> ou <button> pour créer des éléments de liste groupée actionnables."
+        
+        - type: div
+          attributes:
+            class: "list-group"
+          content:
+            - type: a
+              attributes:
+                href: "#"
+                class: "list-group-item list-group-item-action active"
+                aria-current: "true"
+              content: "The current link item"
+            - type: a
+              attributes:
+                href: "#"
+                class: "list-group-item list-group-item-action"
+              content: "A second link item"
+            - type: a
+              attributes:
+                href: "#"
+                class: "list-group-item list-group-item-action"
+              content: "A third link item"
+            - type: a
+              attributes:
+                href: "#"
+                class: "list-group-item list-group-item-action"
+              content: "A fourth link item"
+            - type: a
+              attributes:
+                href: "#"
+                class: "list-group-item list-group-item-action disabled"
+                tabindex: "-1"
+                aria-disabled: "true"
+              content: "A disabled link item"
+
+        # Avec badges
+        - type: h3
+          content: "Avec badges"
+        - type: p
+          content: "Ajoutez des badges à n'importe quel élément de liste groupée pour afficher des compteurs non lus, des alertes, etc."
+        
+        - type: ul
+          attributes:
+            class: "list-group"
+          content:
+            - type: li
+              attributes:
+                class: "list-group-item d-flex justify-content-between align-items-center"
+              content:
+                - type: span
+                  content: "Cras justo odio"
+                - type: span
+                  attributes:
+                    class: "badge bg-primary rounded-pill"
+                  content: "14"
+            - type: li
+              attributes:
+                class: "list-group-item d-flex justify-content-between align-items-center"
+              content:
+                - type: span
+                  content: "Dapibus ac facilisis in"
+                - type: span
+                  attributes:
+                    class: "badge bg-primary rounded-pill"
+                  content: "2"
+            - type: li
+              attributes:
+                class: "list-group-item d-flex justify-content-between align-items-center"
+              content:
+                - type: span
+                  content: "Morbi leo risus"
+                - type: span
+                  attributes:
+                    class: "badge bg-primary rounded-pill"
+                  content: "1"
+
+        # Contenu personnalisé
+        - type: h3
+          content: "Contenu personnalisé"
+        - type: p
+          content: "Ajoutez presque n'importe quel HTML dans vos éléments de liste groupée."
+        
+        - type: div
+          attributes:
+            class: "list-group"
+          content:
+            - type: a
+              attributes:
+                href: "#"
+                class: "list-group-item list-group-item-action active"
+                aria-current: "true"
+              content:
+                - type: div
+                  attributes:
+                    class: "d-flex w-100 justify-content-between"
+                  content:
+                    - type: h5
+                      attributes:
+                        class: "mb-1"
+                      content: "List group item heading"
+                    - type: small
+                      content: "3 days ago"
+                - type: p
+                  attributes:
+                    class: "mb-1"
+                  content: "Some placeholder content in a paragraph."
+                - type: small
+                  content: "And some small print."
+            - type: a
+              attributes:
+                href: "#"
+                class: "list-group-item list-group-item-action"
+              content:
+                - type: div
+                  attributes:
+                    class: "d-flex w-100 justify-content-between"
+                  content:
+                    - type: h5
+                      attributes:
+                        class: "mb-1"
+                      content: "List group item heading"
+                    - type: small
+                      attributes:
+                        class: "text-muted"
+                      content: "3 days ago"
+                - type: p
+                  attributes:
+                    class: "mb-1"
+                  content: "Some placeholder content in a paragraph."
+                - type: small
+                  attributes:
+                    class: "text-muted"
+                  content: "And some muted small print."
+            - type: a
+              attributes:
+                href: "#"
+                class: "list-group-item list-group-item-action"
+              content:
+                - type: div
+                  attributes:
+                    class: "d-flex w-100 justify-content-between"
+                  content:
+                    - type: h5
+                      attributes:
+                        class: "mb-1"
+                      content: "List group item heading"
+                    - type: small
+                      attributes:
+                        class: "text-muted"
+                      content: "3 days ago"
+                - type: p
+                  attributes:
+                    class: "mb-1"
+                  content: "Some placeholder content in a paragraph."
+                - type: small
+                  attributes:
+                    class: "text-muted"
+                  content: "And some muted small print."
+
+        # Couleurs contextuelles
+        - type: h3
+          content: "Couleurs contextuelles"
+        - type: p
+          content: "Utilisez des classes de couleur contextuelles pour styliser les éléments de liste individuellement."
+        
+        - type: ul
+          attributes:
+            class: "list-group"
+          content:
+            - type: li
+              attributes:
+                class: "list-group-item"
+              content: "A simple default list group item"
+            - type: li
+              attributes:
+                class: "list-group-item list-group-item-primary"
+              content: "A simple primary list group item"
+            - type: li
+              attributes:
+                class: "list-group-item list-group-item-secondary"
+              content: "A simple secondary list group item"
+            - type: li
+              attributes:
+                class: "list-group-item list-group-item-success"
+              content: "A simple success list group item"
+            - type: li
+              attributes:
+                class: "list-group-item list-group-item-danger"
+              content: "A simple danger list group item"
+            - type: li
+              attributes:
+                class: "list-group-item list-group-item-warning"
+              content: "A simple warning list group item"
+            - type: li
+              attributes:
+                class: "list-group-item list-group-item-info"
+              content: "A simple info list group item"
+            - type: li
+              attributes:
+                class: "list-group-item list-group-item-light"
+              content: "A simple light list group item"
+            - type: li
+              attributes:
+                class: "list-group-item list-group-item-dark"
+              content: "A simple dark list group item"
+
+        # List group avec onglets
+        - type: h3
+          content: "List group avec onglets"
+        - type: p
+          content: "Combinez list-group avec le plugin JavaScript des onglets pour créer des onglets de contenu."
+        
+        - type: div
+          attributes:
+            class: "row"
+          content:
+            - type: div
+              attributes:
+                class: "col-4"
+              content:
+                - type: div
+                  attributes:
+                    class: "list-group"
+                    id: "list-tab"
+                    role: "tablist"
+                  content:
+                    - type: a
+                      attributes:
+                        class: "list-group-item list-group-item-action active"
+                        id: "list-home-list"
+                        data-bs-toggle: "list"
+                        href: "#list-home"
+                        role: "tab"
+                        aria-controls: "list-home"
+                        aria-selected: "true"
+                      content: "Home"
+                    - type: a
+                      attributes:
+                        class: "list-group-item list-group-item-action"
+                        id: "list-profile-list"
+                        data-bs-toggle: "list"
+                        href: "#list-profile"
+                        role: "tab"
+                        aria-controls: "list-profile"
+                        aria-selected: "false"
+                      content: "Profile"
+                    - type: a
+                      attributes:
+                        class: "list-group-item list-group-item-action"
+                        id: "list-messages-list"
+                        data-bs-toggle: "list"
+                        href: "#list-messages"
+                        role: "tab"
+                        aria-controls: "list-messages"
+                        aria-selected: "false"
+                      content: "Messages"
+                    - type: a
+                      attributes:
+                        class: "list-group-item list-group-item-action"
+                        id: "list-settings-list"
+                        data-bs-toggle: "list"
+                        href: "#list-settings"
+                        role: "tab"
+                        aria-controls: "list-settings"
+                        aria-selected: "false"
+                      content: "Settings"
+            - type: div
+              attributes:
+                class: "col-8"
+              content:
+                - type: div
+                  attributes:
+                    class: "tab-content"
+                    id: "nav-tabContent"
+                  content:
+                    - type: div
+                      attributes:
+                        class: "tab-pane fade show active"
+                        id: "list-home"
+                        role: "tabpanel"
+                        aria-labelledby: "list-home-list"
+                      content: "Velit aute mollit ipsum ad dolor consectetur nulla officia culpa adipisicing exercitation fugiat tempor. Voluptate deserunt sit sunt nisi aliqua fugiat proident ea ut. Mollit voluptate reprehenderit occaecat nisi non non reprehenderit."
+                    - type: div
+                      attributes:
+                        class: "tab-pane fade"
+                        id: "list-profile"
+                        role: "tabpanel"
+                        aria-labelledby: "list-profile-list"
+                      content: "Cupidatat quis ad sint excepteur laborum in esse qui. Et excepteur consectetur ex nisi eu do cillum ad laborum. Mollit et eu officia dolore sunt Lorem culpa qui commodo velit ex veniam culpa."
+                    - type: div
+                      attributes:
+                        class: "tab-pane fade"
+                        id: "list-messages"
+                        role: "tabpanel"
+                        aria-labelledby: "list-messages-list"
+                      content: "Ut ut do pariatur aliquip aliqua aliquip exercitation do nostrud commodo reprehenderit aute ipsum voluptate. Irure Lorem et laboris nostrud amet cupidatat cupidatat anim do ut velit mollit consequat enim tempor."
+                    - type: div
+                      attributes:
+                        class: "tab-pane fade"
+                        id: "list-settings"
+                        role: "tabpanel"
+                        aria-labelledby: "list-settings-list"
+                      content: "Irure enim occaecat labore sit qui aliquip reprehenderit amet velit. Deserunt ullamco ex elit nostrud ut dolore nisi officia magna sit occaecat laboris sunt dolor. Nisi eu fugiat irure proident minim aute."
+
+data:
+  listItems:
+    - "Cras justo odio"
+    - "Dapibus ac facilisis in"
+    - "Morbi leo risus"
+    - "Porta ac consectetur ac"
+    - "Vestibulum at eros"
+
+  colorVariants:
+    - class: "list-group-item"
+      text: "A simple default list group item"
+    - class: "list-group-item list-group-item-primary"
+      text: "A simple primary list group item"
+    - class: "list-group-item list-group-item-secondary"
+      text: "A simple secondary list group item"
+    - class: "list-group-item list-group-item-success"
+      text: "A simple success list group item"
+    - class: "list-group-item list-group-item-danger"
+      text: "A simple danger list group item"
+    - class: "list-group-item list-group-item-warning"
+      text: "A simple warning list group item"
+    - class: "list-group-item list-group-item-info"
+      text: "A simple info list group item"
+    - class: "list-group-item list-group-item-light"
+      text: "A simple light list group item"
+    - class: "list-group-item list-group-item-dark"
+      text: "A simple dark list group item" 

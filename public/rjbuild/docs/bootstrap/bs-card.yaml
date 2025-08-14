@@ -1,0 +1,418 @@
+renderView:
+  - type: h2
+    content: "Card Bootstrap"
+  # Affichage du code Reactive-JSON
+  - type: RjBuildDescriber
+    title: "Reactive-JSON build"
+    description:
+      - type: div
+        content: Cartes Bootstrap avec différents types de contenu, styles et mises en page.
+    toDescribe:
+      renderView:
+        - type: h2
+          content: "Card Bootstrap"
+        
+        # Exemple de base
+        - type: h3
+          content: "Exemple de base"
+        - type: p
+          content: "Les cartes sont construites avec un minimum de balisage et de styles, mais offrent un contrôle et une personnalisation considérables."
+        
+        - type: div
+          attributes:
+            class: "card"
+            style:
+              width: "18rem"
+          content:
+            - type: img
+              attributes:
+                src: "https://lrs.org.za/wp-content/uploads/2020/11/placeholder.png"
+                class: "card-img-top"
+                alt: "Placeholder"
+            - type: div
+              attributes:
+                class: "card-body"
+              content:
+                - type: h5
+                  attributes:
+                    class: "card-title"
+                  content: "Card title"
+                - type: p
+                  attributes:
+                    class: "card-text"
+                  content: "Some quick example text to build on the card title and make up the bulk of the card's content."
+                - type: a
+                  attributes:
+                    href: "#"
+                    class: "btn btn-primary"
+                  content: "Go somewhere"
+
+        # Types de contenu
+        - type: h3
+          content: "Types de contenu"
+        - type: p
+          content: "Les cartes supportent une grande variété de contenu, y compris des images, du texte, des groupes de listes, des liens, et plus encore."
+
+        # Corps de carte
+        - type: h4
+          content: "Corps de carte"
+        - type: p
+          content: "Le bloc de construction d'une carte est le .card-body. Utilisez-le chaque fois que vous avez besoin d'une section avec rembourrage dans une carte."
+        
+        - type: div
+          attributes:
+            class: "card mb-3"
+          content:
+            - type: div
+              attributes:
+                class: "card-body"
+              content: "This is some text within a card body."
+
+        # Titres, texte et liens
+        - type: h4
+          content: "Titres, texte et liens"
+        - type: p
+          content: "Les titres de carte sont utilisés en ajoutant .card-title à une balise <h*>. De la même manière, les liens sont ajoutés en ajoutant .card-link à une balise <a>."
+        
+        - type: div
+          attributes:
+            class: "card"
+            style:
+              width: "18rem"
+          content:
+            - type: div
+              attributes:
+                class: "card-body"
+              content:
+                - type: h5
+                  attributes:
+                    class: "card-title"
+                  content: "Card title"
+                - type: h6
+                  attributes:
+                    class: "card-subtitle mb-2 text-muted"
+                  content: "Card subtitle"
+                - type: p
+                  attributes:
+                    class: "card-text"
+                  content: "Some quick example text to build on the card title and make up the bulk of the card's content."
+                - type: a
+                  attributes:
+                    href: "#"
+                    class: "card-link"
+                  content: "Card link"
+                - type: a
+                  attributes:
+                    href: "#"
+                    class: "card-link"
+                  content: "Another link"
+
+        # Images
+        - type: h4
+          content: "Images"
+        - type: p
+          content: ".card-img-top place une image en haut de la carte."
+        
+        - type: div
+          attributes:
+            class: "card mb-3"
+            style:
+              width: "18rem"
+          content:
+            - type: img
+              attributes:
+                src: "https://lrs.org.za/wp-content/uploads/2020/11/placeholder.png"
+                class: "card-img-top"
+                alt: "Placeholder"
+            - type: div
+              attributes:
+                class: "card-body"
+              content:
+                - type: p
+                  attributes:
+                    class: "card-text"
+                  content: "Some quick example text to build on the card title and make up the bulk of the card's content."
+
+        # Groupes de listes
+        - type: h4
+          content: "Groupes de listes"
+        - type: p
+          content: "Créez des listes de contenu dans une carte avec un groupe de listes flush."
+        
+        - type: div
+          attributes:
+            class: "card mb-3"
+            style:
+              width: "18rem"
+          content:
+            - type: ul
+              attributes:
+                class: "list-group list-group-flush"
+              content:
+                - type: li
+                  attributes:
+                    class: "list-group-item"
+                  content: "An item"
+                - type: li
+                  attributes:
+                    class: "list-group-item"
+                  content: "A second item"
+                - type: li
+                  attributes:
+                    class: "list-group-item"
+                  content: "A third item"
+
+        # Carte avec en-tête
+        - type: div
+          attributes:
+            class: "card mb-3"
+            style:
+              width: "18rem"
+          content:
+            - type: div
+              attributes:
+                class: "card-header"
+              content: "Featured"
+            - type: ul
+              attributes:
+                class: "list-group list-group-flush"
+              content:
+                - type: li
+                  attributes:
+                    class: "list-group-item"
+                  content: "An item"
+                - type: li
+                  attributes:
+                    class: "list-group-item"
+                  content: "A second item"
+                - type: li
+                  attributes:
+                    class: "list-group-item"
+                  content: "A third item"
+
+        # Carte avec pied de page
+        - type: div
+          attributes:
+            class: "card mb-3"
+            style:
+              width: "18rem"
+          content:
+            - type: ul
+              attributes:
+                class: "list-group list-group-flush"
+              content:
+                - type: li
+                  attributes:
+                    class: "list-group-item"
+                  content: "An item"
+                - type: li
+                  attributes:
+                    class: "list-group-item"
+                  content: "A second item"
+                - type: li
+                  attributes:
+                    class: "list-group-item"
+                  content: "A third item"
+            - type: div
+              attributes:
+                class: "card-footer"
+              content: "Card footer"
+
+        # Kitchen sink
+        - type: h4
+          content: "Kitchen sink"
+        - type: p
+          content: "Mélangez et assortissez plusieurs types de contenu pour créer la carte dont vous avez besoin."
+        
+        - type: div
+          attributes:
+            class: "card mb-3"
+            style:
+              width: "18rem"
+          content:
+            - type: img
+              attributes:
+                src: "https://lrs.org.za/wp-content/uploads/2020/11/placeholder.png"
+                class: "card-img-top"
+                alt: "Placeholder"
+            - type: div
+              attributes:
+                class: "card-body"
+              content:
+                - type: h5
+                  attributes:
+                    class: "card-title"
+                  content: "Card title"
+                - type: p
+                  attributes:
+                    class: "card-text"
+                  content: "Some quick example text to build on the card title and make up the bulk of the card's content."
+            - type: ul
+              attributes:
+                class: "list-group list-group-flush"
+              content:
+                - type: li
+                  attributes:
+                    class: "list-group-item"
+                  content: "Cras justo odio"
+                - type: li
+                  attributes:
+                    class: "list-group-item"
+                  content: "Dapibus ac facilisis in"
+                - type: li
+                  attributes:
+                    class: "list-group-item"
+                  content: "Vestibulum at eros"
+            - type: div
+              attributes:
+                class: "card-body"
+              content:
+                - type: a
+                  attributes:
+                    href: "#"
+                    class: "card-link"
+                  content: "Card link"
+                - type: a
+                  attributes:
+                    href: "#"
+                    class: "card-link"
+                  content: "Another link"
+
+        # En-tête et pied de page
+        - type: h4
+          content: "En-tête et pied de page"
+        - type: p
+          content: "Ajoutez un en-tête et/ou un pied de page optionnel à une carte."
+        
+        - type: div
+          attributes:
+            class: "card mb-3"
+            style:
+              width: "18rem"
+          content:
+            - type: div
+              attributes:
+                class: "card-header"
+              content: "Featured"
+            - type: div
+              attributes:
+                class: "card-body"
+              content:
+                - type: h5
+                  attributes:
+                    class: "card-title"
+                  content: "Special title treatment"
+                - type: p
+                  attributes:
+                    class: "card-text"
+                  content: "With supporting text below as a natural lead-in to additional content."
+                - type: a
+                  attributes:
+                    href: "#"
+                    class: "btn btn-primary"
+                  content: "Go somewhere"
+            - type: div
+              attributes:
+                class: "card-footer text-muted"
+              content: "2 days ago"
+
+        # Cartes en grille
+        - type: h4
+          content: "Cartes en grille"
+        - type: p
+          content: "Utilisez le système de grille Bootstrap pour organiser les cartes."
+        
+        - type: div
+          attributes:
+            class: "row row-cols-1 row-cols-md-3 g-4"
+          content:
+            - type: Switch
+              content: ~.gridCards
+              singleOption:
+                load: gridCardTemplate
+
+      templates:
+        gridCardTemplate:
+          type: div
+          attributes:
+            class: "col"
+          content:
+            - type: div
+              attributes:
+                class: "card h-100"
+              content:
+                - type: img
+                  attributes:
+                    src: ~.imageUrl
+                    class: "card-img-top"
+                    alt: ~.imageAlt
+                - type: div
+                  attributes:
+                    class: "card-body"
+                  content:
+                    - type: h5
+                      attributes:
+                        class: "card-title"
+                      content: ~.title
+                    - type: p
+                      attributes:
+                        class: "card-text"
+                      content: ~.text
+
+      data:
+        gridCards:
+          - imageUrl: "https://lrs.org.za/wp-content/uploads/2020/11/placeholder.png"
+            imageAlt: "Card 1"
+            title: "Card title"
+            text: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
+          - imageUrl: "https://lrs.org.za/wp-content/uploads/2020/11/placeholder.png"
+            imageAlt: "Card 2"
+            title: "Card title"
+            text: "This is a short card."
+          - imageUrl: "https://lrs.org.za/wp-content/uploads/2020/11/placeholder.png"
+            imageAlt: "Card 3"
+            title: "Card title"
+            text: "This is a longer card with supporting text below as a natural lead-in to additional content."
+
+templates:
+  gridCardTemplate:
+    type: div
+    attributes:
+      class: "col"
+    content:
+      - type: div
+        attributes:
+          class: "card h-100"
+        content:
+          - type: img
+            attributes:
+              src: ~.imageUrl
+              class: "card-img-top"
+              alt: ~.imageAlt
+          - type: div
+            attributes:
+              class: "card-body"
+            content:
+              - type: h5
+                attributes:
+                  class: "card-title"
+                content: ~.title
+              - type: p
+                attributes:
+                  class: "card-text"
+                content: ~.text
+
+data:
+  gridCards:
+    - imageUrl: "https://via.placeholder.com/286x180/6c757d/ffffff?text=Card+1"
+      imageAlt: "Card 1"
+      title: "Card title"
+      text: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
+    - imageUrl: "https://via.placeholder.com/286x180/6c757d/ffffff?text=Card+2"
+      imageAlt: "Card 2"
+      title: "Card title"
+      text: "This is a short card."
+    - imageUrl: "https://via.placeholder.com/286x180/6c757d/ffffff?text=Card+3"
+      imageAlt: "Card 3"
+      title: "Card title"
+      text: "This is a longer card with supporting text below as a natural lead-in to additional content." 

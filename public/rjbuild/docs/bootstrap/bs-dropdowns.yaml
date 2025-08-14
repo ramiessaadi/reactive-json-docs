@@ -1,0 +1,809 @@
+renderView:
+  - type: h2
+    content: "Dropdowns Bootstrap"
+  # Affichage du code Reactive-JSON
+  - type: RjBuildDescriber
+    title: "Reactive-JSON build"
+    description:
+      - type: div
+        content: Dropdowns Bootstrap avec différents types de boutons, directions et contenus.
+    toDescribe:
+      renderView:
+        - type: h2
+          content: "Dropdowns Bootstrap"
+        
+        # Vue d'ensemble
+        - type: h3
+          content: "Vue d'ensemble"
+        - type: p
+          content: "Les dropdowns sont des overlays contextuels basculables pour afficher des listes de liens et plus encore avec le plugin JavaScript dropdown Bootstrap."
+        
+        # Exemples de base
+        - type: h3
+          content: "Exemples de base"
+        - type: p
+          content: "Enveloppez le toggle du dropdown (votre bouton ou lien) et le menu dropdown dans .dropdown, ou un autre élément qui déclare position: relative;"
+        
+        # Single button
+        - type: h4
+          content: "Single button"
+        - type: p
+          content: "N'importe quel bouton .btn peut être transformé en toggle dropdown avec quelques changements de markup."
+        
+        - type: div
+          attributes:
+            class: "dropdown"
+          content:
+            - type: button
+              attributes:
+                class: "btn btn-secondary dropdown-toggle"
+                type: "button"
+                id: "dropdownMenuButton1"
+                data-bs-toggle: "dropdown"
+                aria-expanded: "false"
+              content: "Dropdown button"
+            - type: ul
+              attributes:
+                class: "dropdown-menu"
+                aria-labelledby: "dropdownMenuButton1"
+              content:
+                - type: li
+                  content:
+                    - type: a
+                      attributes:
+                        class: "dropdown-item"
+                        href: "#"
+                      content: "Action"
+                - type: li
+                  content:
+                    - type: a
+                      attributes:
+                        class: "dropdown-item"
+                        href: "#"
+                      content: "Another action"
+                - type: li
+                  content:
+                    - type: a
+                      attributes:
+                        class: "dropdown-item"
+                        href: "#"
+                      content: "Something else here"
+
+        # Variantes de boutons
+        - type: h4
+          content: "Variantes de boutons"
+        - type: p
+          content: "Vous pouvez faire cela avec n'importe quelle variante de bouton :"
+        
+        - type: div
+          attributes:
+            class: "row"
+          content:
+            - type: Switch
+              content: ~.buttonVariants
+              singleOption:
+                load: buttonVariantTemplate
+
+        # Split button
+        - type: h4
+          content: "Split button"
+        - type: p
+          content: "Créez des dropdowns à bouton divisé avec pratiquement le même markup que les dropdowns à bouton unique, mais avec l'ajout de .dropdown-toggle-split pour un espacement approprié autour du caret dropdown."
+        
+        - type: div
+          attributes:
+            class: "row"
+          content:
+            - type: Switch
+              content: ~.splitButtonVariants
+              singleOption:
+                load: splitButtonTemplate
+
+        # Tailles
+        - type: h4
+          content: "Tailles"
+        - type: p
+          content: "Les dropdowns de boutons fonctionnent avec des boutons de toutes tailles :"
+        
+        - type: div
+          attributes:
+            class: "row"
+          content:
+            - type: Switch
+              content: ~.sizingExamples
+              singleOption:
+                load: sizingTemplate
+
+        # Dark dropdowns
+        - type: h4
+          content: "Dark dropdowns"
+        - type: p
+          content: "Optez pour des dropdowns plus sombres en ajoutant .dropdown-menu-dark :"
+        
+        - type: div
+          attributes:
+            class: "dropdown"
+          content:
+            - type: button
+              attributes:
+                class: "btn btn-secondary dropdown-toggle"
+                type: "button"
+                data-bs-toggle: "dropdown"
+                aria-expanded: "false"
+              content: "Dropdown button"
+            - type: ul
+              attributes:
+                class: "dropdown-menu dropdown-menu-dark"
+              content:
+                - type: li
+                  content:
+                    - type: a
+                      attributes:
+                        class: "dropdown-item active"
+                        href: "#"
+                      content: "Action"
+                - type: li
+                  content:
+                    - type: a
+                      attributes:
+                        class: "dropdown-item"
+                        href: "#"
+                      content: "Another action"
+                - type: li
+                  content:
+                    - type: a
+                      attributes:
+                        class: "dropdown-item"
+                        href: "#"
+                      content: "Something else here"
+                - type: li
+                  content:
+                    - type: hr
+                      attributes:
+                        class: "dropdown-divider"
+                - type: li
+                  content:
+                    - type: a
+                      attributes:
+                        class: "dropdown-item"
+                        href: "#"
+                      content: "Separated link"
+
+        # Directions
+        - type: h4
+          content: "Directions"
+        - type: p
+          content: "Changez la direction du dropdown en ajoutant des classes directionnelles :"
+        
+        - type: div
+          attributes:
+            class: "row"
+          content:
+            - type: Switch
+              content: ~.directionExamples
+              singleOption:
+                load: directionTemplate
+
+        # Menu items
+        - type: h4
+          content: "Menu items"
+        - type: p
+          content: "Ajoutez .active pour indiquer l'état actif et .disabled pour désactiver un élément :"
+        
+        - type: div
+          attributes:
+            class: "dropdown"
+          content:
+            - type: button
+              attributes:
+                class: "btn btn-secondary dropdown-toggle"
+                type: "button"
+                data-bs-toggle: "dropdown"
+                aria-expanded: "false"
+              content: "Dropdown"
+            - type: ul
+              attributes:
+                class: "dropdown-menu"
+              content:
+                - type: li
+                  content:
+                    - type: a
+                      attributes:
+                        class: "dropdown-item"
+                        href: "#"
+                      content: "Regular link"
+                - type: li
+                  content:
+                    - type: a
+                      attributes:
+                        class: "dropdown-item active"
+                        href: "#"
+                        aria-current: "true"
+                      content: "Active link"
+                - type: li
+                  content:
+                    - type: a
+                      attributes:
+                        class: "dropdown-item disabled"
+                        href: "#"
+                        tabindex: "-1"
+                        aria-disabled: "true"
+                      content: "Disabled link"
+
+        # Menu content
+        - type: h4
+          content: "Menu content"
+        - type: p
+          content: "Ajoutez des en-têtes, des séparateurs et du texte :"
+        
+        - type: div
+          attributes:
+            class: "dropdown"
+          content:
+            - type: button
+              attributes:
+                class: "btn btn-secondary dropdown-toggle"
+                type: "button"
+                data-bs-toggle: "dropdown"
+                aria-expanded: "false"
+              content: "Dropdown"
+            - type: ul
+              attributes:
+                class: "dropdown-menu"
+              content:
+                - type: li
+                  content:
+                    - type: h6
+                      attributes:
+                        class: "dropdown-header"
+                      content: "Dropdown header"
+                - type: li
+                  content:
+                    - type: a
+                      attributes:
+                        class: "dropdown-item"
+                        href: "#"
+                      content: "Action"
+                - type: li
+                  content:
+                    - type: a
+                      attributes:
+                        class: "dropdown-item"
+                        href: "#"
+                      content: "Another action"
+                - type: li
+                  content:
+                    - type: hr
+                      attributes:
+                        class: "dropdown-divider"
+                - type: li
+                  content:
+                    - type: a
+                      attributes:
+                        class: "dropdown-item"
+                        href: "#"
+                      content: "Separated link"
+                - type: li
+                  content:
+                    - type: span
+                      attributes:
+                        class: "dropdown-item-text"
+                      content: "Dropdown item text"
+
+      templates:
+        buttonVariantTemplate:
+          type: div
+          attributes:
+            class: "col-md-4 mb-3"
+          content:
+            - type: div
+              attributes:
+                class: "btn-group"
+              content:
+                - type: button
+                  attributes:
+                    type: "button"
+                    class: "btn ~.variant dropdown-toggle"
+                    data-bs-toggle: "dropdown"
+                    aria-expanded: "false"
+                  content: ~.label
+                - type: ul
+                  attributes:
+                    class: "dropdown-menu"
+                  content:
+                    - type: li
+                      content:
+                        - type: a
+                          attributes:
+                            class: "dropdown-item"
+                            href: "#"
+                          content: "Action"
+                    - type: li
+                      content:
+                        - type: a
+                          attributes:
+                            class: "dropdown-item"
+                            href: "#"
+                          content: "Another action"
+                    - type: li
+                      content:
+                        - type: a
+                          attributes:
+                            class: "dropdown-item"
+                            href: "#"
+                          content: "Something else here"
+                    - type: li
+                      content:
+                        - type: hr
+                          attributes:
+                            class: "dropdown-divider"
+                    - type: li
+                      content:
+                        - type: a
+                          attributes:
+                            class: "dropdown-item"
+                            href: "#"
+                          content: "Separated link"
+
+        splitButtonTemplate:
+          type: div
+          attributes:
+            class: "col-md-4 mb-3"
+          content:
+            - type: div
+              attributes:
+                class: "btn-group"
+              content:
+                - type: button
+                  attributes:
+                    type: "button"
+                    class: "btn ~.variant"
+                  content: ~.label
+                - type: button
+                  attributes:
+                    type: "button"
+                    class: "btn ~.variant dropdown-toggle dropdown-toggle-split"
+                    data-bs-toggle: "dropdown"
+                    aria-expanded: "false"
+                  content:
+                    - type: span
+                      attributes:
+                        class: "visually-hidden"
+                      content: "Toggle Dropdown"
+                - type: ul
+                  attributes:
+                    class: "dropdown-menu"
+                  content:
+                    - type: li
+                      content:
+                        - type: a
+                          attributes:
+                            class: "dropdown-item"
+                            href: "#"
+                          content: "Action"
+                    - type: li
+                      content:
+                        - type: a
+                          attributes:
+                            class: "dropdown-item"
+                            href: "#"
+                          content: "Another action"
+                    - type: li
+                      content:
+                        - type: a
+                          attributes:
+                            class: "dropdown-item"
+                            href: "#"
+                          content: "Something else here"
+                    - type: li
+                      content:
+                        - type: hr
+                          attributes:
+                            class: "dropdown-divider"
+                    - type: li
+                      content:
+                        - type: a
+                          attributes:
+                            class: "dropdown-item"
+                            href: "#"
+                          content: "Separated link"
+
+        sizingTemplate:
+          type: div
+          attributes:
+            class: "col-md-6 mb-3"
+          content:
+            - type: div
+              attributes:
+                class: "btn-group"
+              content:
+                - type: button
+                  attributes:
+                    class: "btn btn-secondary ~.size dropdown-toggle"
+                    type: "button"
+                    data-bs-toggle: "dropdown"
+                    aria-expanded: "false"
+                  content: ~.label
+                - type: ul
+                  attributes:
+                    class: "dropdown-menu"
+                  content:
+                    - type: li
+                      content:
+                        - type: a
+                          attributes:
+                            class: "dropdown-item"
+                            href: "#"
+                          content: "Action"
+                    - type: li
+                      content:
+                        - type: a
+                          attributes:
+                            class: "dropdown-item"
+                            href: "#"
+                          content: "Another action"
+                    - type: li
+                      content:
+                        - type: a
+                          attributes:
+                            class: "dropdown-item"
+                            href: "#"
+                          content: "Something else here"
+                    - type: li
+                      content:
+                        - type: hr
+                          attributes:
+                            class: "dropdown-divider"
+                    - type: li
+                      content:
+                        - type: a
+                          attributes:
+                            class: "dropdown-item"
+                            href: "#"
+                          content: "Separated link"
+
+        directionTemplate:
+          type: div
+          attributes:
+            class: "col-md-3 mb-3"
+          content:
+            - type: div
+              attributes:
+                class: "~.direction"
+              content:
+                - type: button
+                  attributes:
+                    class: "btn btn-secondary dropdown-toggle"
+                    type: "button"
+                    data-bs-toggle: "dropdown"
+                    aria-expanded: "false"
+                  content: ~.label
+                - type: ul
+                  attributes:
+                    class: "dropdown-menu"
+                  content:
+                    - type: li
+                      content:
+                        - type: a
+                          attributes:
+                            class: "dropdown-item"
+                            href: "#"
+                          content: "Action"
+                    - type: li
+                      content:
+                        - type: a
+                          attributes:
+                            class: "dropdown-item"
+                            href: "#"
+                          content: "Another action"
+                    - type: li
+                      content:
+                        - type: a
+                          attributes:
+                            class: "dropdown-item"
+                            href: "#"
+                          content: "Something else here"
+
+      data:
+        buttonVariants:
+          - variant: "btn-primary"
+            label: "Primary"
+          - variant: "btn-secondary"
+            label: "Secondary"
+          - variant: "btn-success"
+            label: "Success"
+          - variant: "btn-info"
+            label: "Info"
+          - variant: "btn-warning"
+            label: "Warning"
+          - variant: "btn-danger"
+            label: "Danger"
+
+        splitButtonVariants:
+          - variant: "btn-primary"
+            label: "Primary"
+          - variant: "btn-secondary"
+            label: "Secondary"
+          - variant: "btn-success"
+            label: "Success"
+          - variant: "btn-info"
+            label: "Info"
+          - variant: "btn-warning"
+            label: "Warning"
+          - variant: "btn-danger"
+            label: "Danger"
+
+        sizingExamples:
+          - size: "btn-lg"
+            label: "Large button"
+          - size: "btn-sm"
+            label: "Small button"
+
+        directionExamples:
+          - direction: "dropdown"
+            label: "Dropdown"
+          - direction: "dropup"
+            label: "Dropup"
+          - direction: "dropend"
+            label: "Dropright"
+          - direction: "dropstart"
+            label: "Dropleft"
+
+templates:
+  buttonVariantTemplate:
+    type: div
+    attributes:
+      class: "col-md-4 mb-3"
+    content:
+      - type: div
+        attributes:
+          class: "btn-group"
+        content:
+          - type: button
+            attributes:
+              type: "button"
+              class: "btn ~.variant dropdown-toggle"
+              data-bs-toggle: "dropdown"
+              aria-expanded: "false"
+            content: ~.label
+          - type: ul
+            attributes:
+              class: "dropdown-menu"
+            content:
+              - type: li
+                content:
+                  - type: a
+                    attributes:
+                      class: "dropdown-item"
+                      href: "#"
+                    content: "Action"
+              - type: li
+                content:
+                  - type: a
+                    attributes:
+                      class: "dropdown-item"
+                      href: "#"
+                    content: "Another action"
+              - type: li
+                content:
+                  - type: a
+                    attributes:
+                      class: "dropdown-item"
+                      href: "#"
+                    content: "Something else here"
+              - type: li
+                content:
+                  - type: hr
+                    attributes:
+                      class: "dropdown-divider"
+              - type: li
+                content:
+                  - type: a
+                    attributes:
+                      class: "dropdown-item"
+                      href: "#"
+                    content: "Separated link"
+
+  splitButtonTemplate:
+    type: div
+    attributes:
+      class: "col-md-4 mb-3"
+    content:
+      - type: div
+        attributes:
+          class: "btn-group"
+        content:
+          - type: button
+            attributes:
+              type: "button"
+              class: "btn ~.variant"
+            content: ~.label
+          - type: button
+            attributes:
+              type: "button"
+              class: "btn ~.variant dropdown-toggle dropdown-toggle-split"
+              data-bs-toggle: "dropdown"
+              aria-expanded: "false"
+            content:
+              - type: span
+                attributes:
+                  class: "visually-hidden"
+                content: "Toggle Dropdown"
+          - type: ul
+            attributes:
+              class: "dropdown-menu"
+            content:
+              - type: li
+                content:
+                  - type: a
+                    attributes:
+                      class: "dropdown-item"
+                      href: "#"
+                    content: "Action"
+              - type: li
+                content:
+                  - type: a
+                    attributes:
+                      class: "dropdown-item"
+                      href: "#"
+                    content: "Another action"
+              - type: li
+                content:
+                  - type: a
+                    attributes:
+                      class: "dropdown-item"
+                      href: "#"
+                    content: "Something else here"
+              - type: li
+                content:
+                  - type: hr
+                    attributes:
+                      class: "dropdown-divider"
+              - type: li
+                content:
+                  - type: a
+                    attributes:
+                      class: "dropdown-item"
+                      href: "#"
+                    content: "Separated link"
+
+  sizingTemplate:
+    type: div
+    attributes:
+      class: "col-md-6 mb-3"
+    content:
+      - type: div
+        attributes:
+          class: "btn-group"
+        content:
+          - type: button
+            attributes:
+              class: "btn btn-secondary ~.size dropdown-toggle"
+              type: "button"
+              data-bs-toggle: "dropdown"
+              aria-expanded: "false"
+            content: ~.label
+          - type: ul
+            attributes:
+              class: "dropdown-menu"
+            content:
+              - type: li
+                content:
+                  - type: a
+                    attributes:
+                      class: "dropdown-item"
+                      href: "#"
+                    content: "Action"
+              - type: li
+                content:
+                  - type: a
+                    attributes:
+                      class: "dropdown-item"
+                      href: "#"
+                    content: "Another action"
+              - type: li
+                content:
+                  - type: a
+                    attributes:
+                      class: "dropdown-item"
+                      href: "#"
+                    content: "Something else here"
+              - type: li
+                content:
+                  - type: hr
+                    attributes:
+                      class: "dropdown-divider"
+              - type: li
+                content:
+                  - type: a
+                    attributes:
+                      class: "dropdown-item"
+                      href: "#"
+                    content: "Separated link"
+
+  directionTemplate:
+    type: div
+    attributes:
+      class: "col-md-3 mb-3"
+    content:
+      - type: div
+        attributes:
+          class: "~.direction"
+        content:
+          - type: button
+            attributes:
+              class: "btn btn-secondary dropdown-toggle"
+              type: "button"
+              data-bs-toggle: "dropdown"
+              aria-expanded: "false"
+            content: ~.label
+          - type: ul
+            attributes:
+              class: "dropdown-menu"
+            content:
+              - type: li
+                content:
+                  - type: a
+                    attributes:
+                      class: "dropdown-item"
+                      href: "#"
+                    content: "Action"
+              - type: li
+                content:
+                  - type: a
+                    attributes:
+                      class: "dropdown-item"
+                      href: "#"
+                    content: "Another action"
+              - type: li
+                content:
+                  - type: a
+                    attributes:
+                      class: "dropdown-item"
+                      href: "#"
+                    content: "Something else here"
+
+data:
+  buttonVariants:
+    - variant: "btn-primary"
+      label: "Primary"
+    - variant: "btn-secondary"
+      label: "Secondary"
+    - variant: "btn-success"
+      label: "Success"
+    - variant: "btn-info"
+      label: "Info"
+    - variant: "btn-warning"
+      label: "Warning"
+    - variant: "btn-danger"
+      label: "Danger"
+
+  splitButtonVariants:
+    - variant: "btn-primary"
+      label: "Primary"
+    - variant: "btn-secondary"
+      label: "Secondary"
+    - variant: "btn-success"
+      label: "Success"
+    - variant: "btn-info"
+      label: "Info"
+    - variant: "btn-warning"
+      label: "Warning"
+    - variant: "btn-danger"
+      label: "Danger"
+
+  sizingExamples:
+    - size: "btn-lg"
+      label: "Large button"
+    - size: "btn-sm"
+      label: "Small button"
+
+  directionExamples:
+    - direction: "dropdown"
+      label: "Dropdown"
+    - direction: "dropup"
+      label: "Dropup"
+    - direction: "dropend"
+      label: "Dropright"
+    - direction: "dropstart"
+      label: "Dropleft" 

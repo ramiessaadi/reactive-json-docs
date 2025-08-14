@@ -225,6 +225,65 @@ export const docsPageNavigation = {
             },
         }
     },
+    "/docs/bootstrap": {
+        title: "Bootstrap Components",
+        items: {
+            "/docs/bootstrap/bs-breadcrumbs": {
+                title: "Breadcrumbs",
+            },
+            "/docs/bootstrap/bs-buttons": {
+                title: "Buttons",
+            },
+            "/docs/bootstrap/bs-button-group": {
+                title: "Button Group",
+            },
+            "/docs/bootstrap/bs-card": {
+                title: "Card",
+            },
+            "/docs/bootstrap/bs-collapse": {
+                title: "Collapse",
+            },
+            "/docs/bootstrap/bs-dropdowns": {
+                title: "Dropdowns",
+            },
+            "/docs/bootstrap/bs-list-group": {
+                title: "List Group",
+            },
+            "/docs/bootstrap/bs-offcanvas": {
+                title: "Offcanvas",
+            },
+            "/docs/bootstrap/bs-popovers": {
+                title: "Popovers",
+            },
+            "/docs/bootstrap/bs-progress": {
+                title: "Progress",
+            },
+            "/docs/bootstrap/bs-spinners": {
+                title: "Spinners",
+            },
+            "/docs/bootstrap/bs-toasts": {
+                title: "Toasts",
+            },
+            "/docs/bootstrap/bs-tooltips": {
+                title: "Tooltips",
+            },
+            "/docs/bootstrap/bs-carousel": {
+                title: "Carousel",
+            },
+            "/docs/bootstrap/bs-tabs": {
+                title: "Tabs",
+            },
+            "/docs/bootstrap/bs-table": {
+                title: "Table",
+            },
+            "/docs/bootstrap/bs-sidebars": {
+                title: "Sidebars",
+            },
+            "/docs/bootstrap/bs-modal-variants": {
+                title: "Modal Variants",
+            },
+        }
+    },
     "/docs/extend": {
         title: "Extending Reactive-JSON",
         items: {

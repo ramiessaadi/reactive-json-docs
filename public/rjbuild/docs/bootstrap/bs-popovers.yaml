@@ -1,0 +1,185 @@
+renderView:
+  - type: h2
+    content: "Popovers Bootstrap"
+  # Affichage du code Reactive-JSON
+  - type: RjBuildDescriber
+    title: "Reactive-JSON build"
+    description:
+      - type: div
+        content: Popovers Bootstrap avec différentes directions, déclencheurs et contenus personnalisés.
+    toDescribe:
+      renderView:
+        - type: h2
+          content: "Popovers Bootstrap"
+        
+        # Vue d'ensemble
+        - type: h3
+          content: "Vue d'ensemble"
+        - type: p
+          content: "Documentation et exemples pour ajouter des popovers Bootstrap, comme ceux trouvés dans iOS, à n'importe quel élément de votre site."
+        - type: p
+          content: "Les popovers s'appuient sur la bibliothèque tierce Popper pour le positionnement. Vous devez inclure popper.min.js avant bootstrap.js ou utiliser bootstrap.bundle.min.js qui contient Popper."
+        
+        # Exemple de base
+        - type: h3
+          content: "Exemple de base"
+        - type: p
+          content: "Cliquez pour basculer le popover"
+        
+        - type: button
+          attributes:
+            type: "button"
+            class: "btn btn-lg btn-danger"
+            data-bs-toggle: "popover"
+            title: "Popover title"
+            data-bs-content: "And here's some amazing content. It's very engaging. Right?"
+          content: "Click to toggle popover"
+
+        # Quatre directions
+        - type: h3
+          content: "Quatre directions"
+        - type: p
+          content: "Quatre options sont disponibles : top, right, bottom, et left alignées. Les directions sont miroirées lors de l'utilisation de Bootstrap en RTL."
+        
+        - type: div
+          attributes:
+            class: "row"
+          content:
+            - type: Switch
+              content: ~.directionExamples
+              singleOption:
+                load: directionTemplate
+
+        # Dismiss on next click
+        - type: h3
+          content: "Dismiss on next click"
+        - type: p
+          content: "Utilisez le déclencheur focus pour fermer les popovers lors du prochain clic de l'utilisateur sur un élément différent de l'élément de basculement."
+        - type: p
+          content: "Pour un comportement cross-browser et cross-platform approprié, vous devez utiliser la balise <a>, pas la balise <button>, et vous devez également inclure un attribut tabindex."
+        
+        - type: a
+          attributes:
+            tabindex: "0"
+            class: "btn btn-lg btn-danger"
+            role: "button"
+            data-bs-toggle: "popover"
+            data-bs-trigger: "focus"
+            title: "Dismissible popover"
+            data-bs-content: "And here's some amazing content. It's very engaging. Right?"
+          content: "Dismissible popover"
+
+        # Éléments désactivés
+        - type: h3
+          content: "Éléments désactivés"
+        - type: p
+          content: "Les éléments avec l'attribut disabled ne sont pas interactifs, ce qui signifie que les utilisateurs ne peuvent pas les survoler ou cliquer dessus pour déclencher un popover. Comme solution de contournement, vous voudrez déclencher le popover depuis un wrapper <div> ou <span>, idéalement rendu focusable au clavier en utilisant tabindex='0'."
+        
+        - type: span
+          attributes:
+            class: "d-inline-block"
+            tabindex: "0"
+            data-bs-toggle: "popover"
+            data-bs-trigger: "hover focus"
+            data-bs-content: "Disabled popover"
+          content:
+            - type: button
+              attributes:
+                class: "btn btn-primary"
+                type: "button"
+                disabled: "disabled"
+              content: "Disabled button"
+
+        # Popovers avec HTML
+        - type: h3
+          content: "Popovers avec HTML"
+        - type: p
+          content: "Vous pouvez insérer du HTML riche et structuré dans les popovers avec l'option html."
+        
+        - type: button
+          attributes:
+            type: "button"
+            class: "btn btn-secondary"
+            data-bs-toggle: "popover"
+            data-bs-html: "true"
+            title: "<em>Tooltip</em> <u>with</u> <b>HTML</b>"
+            data-bs-content: "<em>Et voici</em> <u>du contenu</u> <b>HTML</b>."
+          content: "Popover with HTML"
+
+        # Popovers avec contenu personnalisé
+        - type: h3
+          content: "Popovers avec contenu personnalisé"
+        - type: p
+          content: "Vous pouvez personnaliser l'apparence des popovers avec des classes CSS personnalisées."
+        
+        - type: button
+          attributes:
+            type: "button"
+            class: "btn btn-info"
+            data-bs-toggle: "popover"
+            data-bs-custom-class: "custom-popover"
+            title: "Custom popover"
+            data-bs-content: "Ce popover a une classe personnalisée pour le style."
+          content: "Custom styled popover"
+
+      templates:
+        directionTemplate:
+          type: div
+          attributes:
+            class: "col-md-3 mb-3"
+          content:
+            - type: button
+              attributes:
+                type: "button"
+                class: "btn btn-secondary"
+                data-bs-container: "body"
+                data-bs-toggle: "popover"
+                data-bs-placement: ~.placement
+                data-bs-content: ~.content
+              content: ~.label
+
+      data:
+        directionExamples:
+          - placement: "top"
+            label: "Popover on top"
+            content: "Top popover"
+          - placement: "right"
+            label: "Popover on right"
+            content: "Right popover"
+          - placement: "bottom"
+            label: "Popover on bottom"
+            content: "Bottom popover"
+          - placement: "left"
+            label: "Popover on left"
+            content: "Left popover"
+
+templates:
+  directionTemplate:
+    type: div
+    attributes:
+      class: "col-md-3 mb-3"
+    content:
+      - type: button
+        attributes:
+          type: "button"
+          class: "btn btn-secondary"
+          data-bs-container: "body"
+          data-bs-toggle: "popover"
+          data-bs-placement: ~.placement
+          data-bs-content: ~.content
+        content: ~.label
+
+data:
+  directionExamples:
+    - placement: "top"
+      label: "Popover on top"
+      content: "Top popover"
+    - placement: "right"
+      label: "Popover on right"
+      content: "Right popover"
+    - placement: "bottom"
+      label: "Popover on bottom"
+      content: "Bottom popover"
+    - placement: "left"
+      label: "Popover on left"
+      content: "Left popover" 

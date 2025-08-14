@@ -1,0 +1,388 @@
+renderView:
+  - type: h2
+    content: "Progress Bootstrap"
+  # Affichage du code Reactive-JSON
+  - type: RjBuildDescriber
+    title: "Reactive-JSON build"
+    description:
+      - type: div
+        content: Progress bars Bootstrap avec différentes couleurs, styles et animations.
+    toDescribe:
+      renderView:
+        - type: h2
+          content: "Progress Bootstrap"
+        
+        # Vue d'ensemble
+        - type: h3
+          content: "Vue d'ensemble"
+        - type: p
+          content: "Documentation et exemples pour utiliser les barres de progression Bootstrap pour afficher des indicateurs de progression simples et élégants."
+        
+        # Exemple de base
+        - type: h3
+          content: "Exemple de base"
+        - type: p
+          content: "Les barres de progression utilisent quelques classes utilitaires pour définir leur apparence, ainsi que les attributs HTML5."
+        
+        - type: div
+          attributes:
+            class: "progress"
+          content:
+            - type: div
+              attributes:
+                class: "progress-bar"
+                role: "progressbar"
+                style:
+                  width: "25%"
+                aria-valuenow: "25"
+                aria-valuemin: "0"
+                aria-valuemax: "100"
+              content: "25%"
+
+        # Avec label
+        - type: h3
+          content: "Avec label"
+        - type: p
+          content: "Ajoutez des labels à vos barres de progression en plaçant du texte dans le .progress-bar."
+        
+        - type: div
+          attributes:
+            class: "progress"
+          content:
+            - type: div
+              attributes:
+                class: "progress-bar"
+                role: "progressbar"
+                style:
+                  width: "0%"
+                aria-valuenow: "0"
+                aria-valuemin: "0"
+                aria-valuemax: "100"
+              content: "0%"
+        
+        - type: div
+          attributes:
+            class: "progress"
+          content:
+            - type: div
+              attributes:
+                class: "progress-bar"
+                role: "progressbar"
+                style:
+                  width: "25%"
+                aria-valuenow: "25"
+                aria-valuemin: "0"
+                aria-valuemax: "100"
+              content: "25%"
+        
+        - type: div
+          attributes:
+            class: "progress"
+          content:
+            - type: div
+              attributes:
+                class: "progress-bar"
+                role: "progressbar"
+                style:
+                  width: "50%"
+                aria-valuenow: "50"
+                aria-valuemin: "0"
+                aria-valuemax: "100"
+              content: "50%"
+        
+        - type: div
+          attributes:
+            class: "progress"
+          content:
+            - type: div
+              attributes:
+                class: "progress-bar"
+                role: "progressbar"
+                style:
+                  width: "75%"
+                aria-valuenow: "75"
+                aria-valuemin: "0"
+                aria-valuemax: "100"
+              content: "75%"
+        
+        - type: div
+          attributes:
+            class: "progress"
+          content:
+            - type: div
+              attributes:
+                class: "progress-bar"
+                role: "progressbar"
+                style:
+                  width: "100%"
+                aria-valuenow: "100"
+                aria-valuemin: "0"
+                aria-valuemax: "100"
+              content: "100%"
+
+        # Hauteur
+        - type: h3
+          content: "Hauteur"
+        - type: p
+          content: "Nous avons seulement défini une hauteur, donc si vous changez cette valeur, les barres internes s'ajusteront automatiquement."
+        
+        - type: div
+          attributes:
+            class: "progress"
+            style:
+              height: "1px"
+          content:
+            - type: div
+              attributes:
+                class: "progress-bar"
+                role: "progressbar"
+                style:
+                  width: "25%"
+                aria-valuenow: "25"
+                aria-valuemin: "0"
+                aria-valuemax: "100"
+        
+        - type: div
+          attributes:
+            class: "progress"
+            style:
+              height: "20px"
+          content:
+            - type: div
+              attributes:
+                class: "progress-bar"
+                role: "progressbar"
+                style:
+                  width: "25%"
+                aria-valuenow: "25"
+                aria-valuemin: "0"
+                aria-valuemax: "100"
+              content: "25%"
+
+        # Couleurs de fond
+        - type: h3
+          content: "Couleurs de fond"
+        - type: p
+          content: "Changez l'apparence des barres de progression individuelles avec les classes utilitaires."
+        
+        - type: div
+          attributes:
+            class: "row"
+          content:
+            - type: Switch
+              content: ~.colorExamples
+              singleOption:
+                load: colorTemplate
+
+        # Barres rayées
+        - type: h3
+          content: "Barres rayées"
+        - type: p
+          content: "Ajoutez .progress-bar-striped à n'importe quelle .progress-bar pour appliquer un effet rayé via CSS gradient sur la couleur de fond de la barre de progression."
+        
+        - type: div
+          attributes:
+            class: "progress"
+          content:
+            - type: div
+              attributes:
+                class: "progress-bar progress-bar-striped"
+                role: "progressbar"
+                style:
+                  width: "10%"
+                aria-valuenow: "10"
+                aria-valuemin: "0"
+                aria-valuemax: "100"
+              content: "10%"
+        
+        - type: div
+          attributes:
+            class: "progress"
+          content:
+            - type: div
+              attributes:
+                class: "progress-bar progress-bar-striped bg-success"
+                role: "progressbar"
+                style:
+                  width: "25%"
+                aria-valuenow: "25"
+                aria-valuemin: "0"
+                aria-valuemax: "100"
+              content: "25%"
+        
+        - type: div
+          attributes:
+            class: "progress"
+          content:
+            - type: div
+              attributes:
+                class: "progress-bar progress-bar-striped bg-info"
+                role: "progressbar"
+                style:
+                  width: "50%"
+                aria-valuenow: "50"
+                aria-valuemin: "0"
+                aria-valuemax: "100"
+              content: "50%"
+        
+        - type: div
+          attributes:
+            class: "progress"
+          content:
+            - type: div
+              attributes:
+                class: "progress-bar progress-bar-striped bg-warning"
+                role: "progressbar"
+                style:
+                  width: "75%"
+                aria-valuenow: "75"
+                aria-valuemin: "0"
+                aria-valuemax: "100"
+              content: "75%"
+        
+        - type: div
+          attributes:
+            class: "progress"
+          content:
+            - type: div
+              attributes:
+                class: "progress-bar progress-bar-striped bg-danger"
+                role: "progressbar"
+                style:
+                  width: "100%"
+                aria-valuenow: "100"
+                aria-valuemin: "0"
+                aria-valuemax: "100"
+              content: "100%"
+
+        # Barres animées
+        - type: h3
+          content: "Barres animées"
+        - type: p
+          content: "Les barres rayées peuvent également être animées. Ajoutez .progress-bar-animated à .progress-bar pour animer les rayures de droite à gauche via CSS3 animations."
+        
+        - type: div
+          attributes:
+            class: "progress"
+          content:
+            - type: div
+              attributes:
+                class: "progress-bar progress-bar-striped progress-bar-animated"
+                role: "progressbar"
+                style:
+                  width: "75%"
+                aria-valuenow: "75"
+                aria-valuemin: "0"
+                aria-valuemax: "100"
+              content: "75%"
+
+        # Barres multiples
+        - type: h3
+          content: "Barres multiples"
+        - type: p
+          content: "Incluez plusieurs barres de progression dans un .progress si vous le souhaitez."
+        
+        - type: div
+          attributes:
+            class: "progress"
+          content:
+            - type: div
+              attributes:
+                class: "progress-bar"
+                role: "progressbar"
+                style:
+                  width: "15%"
+                aria-valuenow: "15"
+                aria-valuemin: "0"
+                aria-valuemax: "100"
+              content: "15%"
+            - type: div
+              attributes:
+                class: "progress-bar bg-success"
+                role: "progressbar"
+                style:
+                  width: "30%"
+                aria-valuenow: "30"
+                aria-valuemin: "0"
+                aria-valuemax: "100"
+              content: "30%"
+            - type: div
+              attributes:
+                class: "progress-bar bg-info"
+                role: "progressbar"
+                style:
+                  width: "20%"
+                aria-valuenow: "20"
+                aria-valuemin: "0"
+                aria-valuemax: "100"
+              content: "20%"
+
+      templates:
+        colorTemplate:
+          type: div
+          attributes:
+            class: "col-md-6 mb-3"
+          content:
+            - type: div
+              attributes:
+                class: ~.colorClass
+                role: "progressbar"
+                style:
+                  width: ~.width + "%"
+                aria-valuenow: ~.width
+                aria-valuemin: "0"
+                aria-valuemax: "100"
+              content: ~.label
+
+      data:
+        colorExamples:
+          - colorClass: "progress-bar"
+            width: 25
+            label: "25%"
+          - colorClass: "progress-bar bg-success"
+            width: 40
+            label: "40%"
+          - colorClass: "progress-bar bg-info"
+            width: 60
+            label: "60%"
+          - colorClass: "progress-bar bg-warning"
+            width: 80
+            label: "80%"
+          - colorClass: "progress-bar bg-danger"
+            width: 100
+            label: "100%"
+
+templates:
+  colorTemplate:
+    type: div
+    attributes:
+      class: "col-md-6 mb-3"
+    content:
+      - type: div
+        attributes:
+          class: ~.colorClass
+          role: "progressbar"
+          style:
+            width: ~.width + "%"
+          aria-valuenow: ~.width
+          aria-valuemin: "0"
+          aria-valuemax: "100"
+        content: ~.label
+
+data:
+  colorExamples:
+    - colorClass: "progress-bar"
+      width: 25
+      label: "25%"
+    - colorClass: "progress-bar bg-success"
+      width: 40
+      label: "40%"
+    - colorClass: "progress-bar bg-info"
+      width: 60
+      label: "60%"
+    - colorClass: "progress-bar bg-warning"
+      width: 80
+      label: "80%"
+    - colorClass: "progress-bar bg-danger"
+      width: 100
+      label: "100%" 

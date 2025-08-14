@@ -1,0 +1,412 @@
+renderView:
+  - type: h2
+    content: "Offcanvas Bootstrap" 
+  # Affichage du code Reactive-JSON
+  - type: RjBuildDescriber
+    title: "Reactive-JSON build"
+    description:
+      - type: div
+        content: Offcanvas Bootstrap avec différents placements et options de backdrop.
+    toDescribe:
+      renderView:
+        - type: h2
+          content: "Offcanvas Bootstrap"
+        
+        # Vue d'ensemble
+        - type: h3
+          content: "Vue d'ensemble"
+        - type: p
+          content: "Construisez des panneaux latéraux cachés dans votre application pour la navigation, les filtres, les détails, etc."
+        
+        # Exemple de base
+        - type: h3
+          content: "Exemple de base"
+        - type: p
+          content: "Utilisez le bouton ci-dessous pour ouvrir et fermer un offcanvas par défaut via JavaScript qui s'affiche à droite."
+        
+        - type: button
+          attributes:
+            class: "btn btn-primary"
+            type: "button"
+            data-bs-toggle: "offcanvas"
+            data-bs-target: "#offcanvasExample"
+            aria-controls: "offcanvasExample"
+          content: "Button with data-bs-target"
+        
+        - type: div
+          attributes:
+            class: "offcanvas offcanvas-start"
+            tabindex: "-1"
+            id: "offcanvasExample"
+            aria-labelledby: "offcanvasExampleLabel"
+          content:
+            - type: div
+              attributes:
+                class: "offcanvas-header"
+              content:
+                - type: h5
+                  attributes:
+                    class: "offcanvas-title"
+                    id: "offcanvasExampleLabel"
+                  content: "Offcanvas"
+                - type: button
+                  attributes:
+                    type: "button"
+                    class: "btn-close text-reset"
+                    data-bs-dismiss: "offcanvas"
+                    aria-label: "Close"
+            - type: div
+              attributes:
+                class: "offcanvas-body"
+              content:
+                - type: div
+                  content: "Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc."
+                - type: div
+                  attributes:
+                    class: "dropdown mt-3"
+                  content:
+                    - type: button
+                      attributes:
+                        class: "btn btn-secondary dropdown-toggle"
+                        type: "button"
+                        id: "dropdownMenuButton"
+                        data-bs-toggle: "dropdown"
+                      content: "Dropdown button"
+                    - type: ul
+                      attributes:
+                        class: "dropdown-menu"
+                        aria-labelledby: "dropdownMenuButton"
+                      content:
+                        - type: li
+                          content:
+                            - type: a
+                              attributes:
+                                class: "dropdown-item"
+                                href: "#"
+                              content: "Action"
+                        - type: li
+                          content:
+                            - type: a
+                              attributes:
+                                class: "dropdown-item"
+                                href: "#"
+                              content: "Another action"
+                        - type: li
+                          content:
+                            - type: a
+                              attributes:
+                                class: "dropdown-item"
+                                href: "#"
+                              content: "Something else here"
+
+        # Placement
+        - type: h3
+          content: "Placement"
+        - type: p
+          content: "Il y a pas de placement par défaut pour les offcanvas, donc vous devez ajouter une des classes de modification suivantes :"
+        - type: ul
+          content:
+            - type: li
+              content: ".offcanvas-start place l'offcanvas sur la gauche"
+            - type: li
+              content: ".offcanvas-end place l'offcanvas sur la droite"
+            - type: li
+              content: ".offcanvas-top place l'offcanvas en haut"
+            - type: li
+              content: ".offcanvas-bottom place l'offcanvas en bas"
+        
+        - type: div
+          attributes:
+            class: "row"
+          content:
+            - type: Switch
+              content: ~.placementExamples
+              singleOption:
+                load: placementTemplate
+
+        # Backdrop
+        - type: h3
+          content: "Backdrop"
+        - type: p
+          content: "Les offcanvas incluent un backdrop par défaut. Cliquez en dehors de l'offcanvas pour le fermer. Vous pouvez également désactiver le backdrop avec data-bs-backdrop='false'."
+        
+        - type: button
+          attributes:
+            class: "btn btn-primary"
+            type: "button"
+            data-bs-toggle: "offcanvas"
+            data-bs-target: "#offcanvasScrolling"
+            aria-controls: "offcanvasScrolling"
+          content: "Enable body scrolling"
+        
+        - type: button
+          attributes:
+            class: "btn btn-primary"
+            type: "button"
+            data-bs-toggle: "offcanvas"
+            data-bs-target: "#offcanvasWithBackdrop"
+            aria-controls: "offcanvasWithBackdrop"
+          content: "Enable backdrop (default)"
+        
+        - type: button
+          attributes:
+            class: "btn btn-primary"
+            type: "button"
+            data-bs-toggle: "offcanvas"
+            data-bs-target: "#offcanvasWithBothOptions"
+            aria-controls: "offcanvasWithBothOptions"
+          content: "Enable both scrolling & backdrop"
+        
+        - type: div
+          attributes:
+            class: "offcanvas offcanvas-start"
+            data-bs-scroll: "true"
+            data-bs-backdrop: "false"
+            tabindex: "-1"
+            id: "offcanvasScrolling"
+            aria-labelledby: "offcanvasScrollingLabel"
+          content:
+            - type: div
+              attributes:
+                class: "offcanvas-header"
+              content:
+                - type: h5
+                  attributes:
+                    class: "offcanvas-title"
+                    id: "offcanvasScrollingLabel"
+                  content: "Colored with scrolling"
+                - type: button
+                  attributes:
+                    type: "button"
+                    class: "btn-close"
+                    data-bs-dismiss: "offcanvas"
+                    aria-label: "Close"
+            - type: div
+              attributes:
+                class: "offcanvas-body"
+              content:
+                - type: p
+                  content: "Try scrolling the rest of the page to see this option in action."
+                - type: p
+                  content: "Placeholder content for this offcanvas example. As you'd expect, we have some placeholder content here. We're running out of things to say, so we're just adding some placeholder text to make this look more realistic. As you'd expect, we have some placeholder content here. We're running out of things to say, so we're just adding some placeholder text to make this look more realistic. As you'd expect, we have some placeholder content here. We're running out of things to say, so we're just adding some placeholder text to make this look more realistic."
+        
+        - type: div
+          attributes:
+            class: "offcanvas offcanvas-start"
+            tabindex: "-1"
+            id: "offcanvasWithBackdrop"
+            aria-labelledby: "offcanvasWithBackdropLabel"
+          content:
+            - type: div
+              attributes:
+                class: "offcanvas-header"
+              content:
+                - type: h5
+                  attributes:
+                    class: "offcanvas-title"
+                    id: "offcanvasWithBackdropLabel"
+                  content: "Offcanvas with backdrop"
+                - type: button
+                  attributes:
+                    type: "button"
+                    class: "btn-close"
+                    data-bs-dismiss: "offcanvas"
+                    aria-label: "Close"
+            - type: div
+              attributes:
+                class: "offcanvas-body"
+              content:
+                - type: p
+                  content: "...and this is the backdrop. Click outside to close."
+        
+        - type: div
+          attributes:
+            class: "offcanvas offcanvas-start"
+            data-bs-scroll: "true"
+            tabindex: "-1"
+            id: "offcanvasWithBothOptions"
+            aria-labelledby: "offcanvasWithBothOptionsLabel"
+          content:
+            - type: div
+              attributes:
+                class: "offcanvas-header"
+              content:
+                - type: h5
+                  attributes:
+                    class: "offcanvas-title"
+                    id: "offcanvasWithBothOptionsLabel"
+                  content: "Backdroped with scrolling"
+                - type: button
+                  attributes:
+                    type: "button"
+                    class: "btn-close"
+                    data-bs-dismiss: "offcanvas"
+                    aria-label: "Close"
+            - type: div
+              attributes:
+                class: "offcanvas-body"
+              content:
+                - type: p
+                  content: "Try scrolling the rest of the page to see this option in action."
+                - type: p
+                  content: "Placeholder content for this offcanvas example. As you'd expect, we have some placeholder content here. We're running out of things to say, so we're just adding some placeholder text to make this look more realistic. As you'd expect, we have some placeholder content here. We're running out of things to say, so we're just adding some placeholder text to make this look more realistic. As you'd expect, we have some placeholder content here. We're running out of things to say, so we're just adding some placeholder text to make this look more realistic."
+
+      templates:
+        placementTemplate:
+          type: div
+          attributes:
+            class: "col-md-3 mb-3"
+          content:
+            - type: button
+              attributes:
+                class: "btn btn-primary"
+                type: "button"
+                data-bs-toggle: "offcanvas"
+                data-bs-target: ~.target
+                aria-controls: ~.controls
+              content: ~.label
+            - type: div
+              attributes:
+                class: ~.offcanvasClass
+                tabindex: "-1"
+                id: ~.id
+                aria-labelledby: ~.labelledby
+              content:
+                - type: div
+                  attributes:
+                    class: "offcanvas-header"
+                  content:
+                    - type: h5
+                      attributes:
+                        class: "offcanvas-title"
+                        id: ~.labelledby
+                      content: ~.title
+                    - type: button
+                      attributes:
+                        type: "button"
+                        class: "btn-close text-reset"
+                        data-bs-dismiss: "offcanvas"
+                        aria-label: "Close"
+                - type: div
+                  attributes:
+                    class: "offcanvas-body"
+                  content: ~.content
+
+      data:
+        placementExamples:
+          - placement: "start"
+            label: "Offcanvas start"
+            target: "#offcanvasStart"
+            controls: "offcanvasStart"
+            offcanvasClass: "offcanvas offcanvas-start"
+            id: "offcanvasStart"
+            labelledby: "offcanvasStartLabel"
+            title: "Offcanvas start"
+            content: "Placeholder content for this offcanvas example. As you'd expect, we have some placeholder content here. We're running out of things to say, so we're just adding some placeholder text to make this look more realistic."
+          - placement: "end"
+            label: "Offcanvas end"
+            target: "#offcanvasEnd"
+            controls: "offcanvasEnd"
+            offcanvasClass: "offcanvas offcanvas-end"
+            id: "offcanvasEnd"
+            labelledby: "offcanvasEndLabel"
+            title: "Offcanvas end"
+            content: "Placeholder content for this offcanvas example. As you'd expect, we have some placeholder content here. We're running out of things to say, so we're just adding some placeholder text to make this look more realistic."
+          - placement: "top"
+            label: "Offcanvas top"
+            target: "#offcanvasTop"
+            controls: "offcanvasTop"
+            offcanvasClass: "offcanvas offcanvas-top"
+            id: "offcanvasTop"
+            labelledby: "offcanvasTopLabel"
+            title: "Offcanvas top"
+            content: "Placeholder content for this offcanvas example. As you'd expect, we have some placeholder content here. We're running out of things to say, so we're just adding some placeholder text to make this look more realistic."
+          - placement: "bottom"
+            label: "Offcanvas bottom"
+            target: "#offcanvasBottom"
+            controls: "offcanvasBottom"
+            offcanvasClass: "offcanvas offcanvas-bottom"
+            id: "offcanvasBottom"
+            labelledby: "offcanvasBottomLabel"
+            title: "Offcanvas bottom"
+            content: "Placeholder content for this offcanvas example. As you'd expect, we have some placeholder content here. We're running out of things to say, so we're just adding some placeholder text to make this look more realistic."
+
+templates:
+  placementTemplate:
+    type: div
+    attributes:
+      class: "col-md-3 mb-3"
+    content:
+      - type: button
+        attributes:
+          class: "btn btn-primary"
+          type: "button"
+          data-bs-toggle: "offcanvas"
+          data-bs-target: ~.target
+          aria-controls: ~.controls
+        content: ~.label
+      - type: div
+        attributes:
+          class: ~.offcanvasClass
+          tabindex: "-1"
+          id: ~.id
+          aria-labelledby: ~.labelledby
+        content:
+          - type: div
+            attributes:
+              class: "offcanvas-header"
+            content:
+              - type: h5
+                attributes:
+                  class: "offcanvas-title"
+                  id: ~.labelledby
+                content: ~.title
+              - type: button
+                attributes:
+                  type: "button"
+                  class: "btn-close text-reset"
+                  data-bs-dismiss: "offcanvas"
+                  aria-label: "Close"
+          - type: div
+            attributes:
+              class: "offcanvas-body"
+            content: ~.content
+
+data:
+  placementExamples:
+    - placement: "start"
+      label: "Offcanvas start"
+      target: "#offcanvasStart"
+      controls: "offcanvasStart"
+      offcanvasClass: "offcanvas offcanvas-start"
+      id: "offcanvasStart"
+      labelledby: "offcanvasStartLabel"
+      title: "Offcanvas start"
+      content: "Placeholder content for this offcanvas example. As you'd expect, we have some placeholder content here. We're running out of things to say, so we're just adding some placeholder text to make this look more realistic."
+    - placement: "end"
+      label: "Offcanvas end"
+      target: "#offcanvasEnd"
+      controls: "offcanvasEnd"
+      offcanvasClass: "offcanvas offcanvas-end"
+      id: "offcanvasEnd"
+      labelledby: "offcanvasEndLabel"
+      title: "Offcanvas end"
+      content: "Placeholder content for this offcanvas example. As you'd expect, we have some placeholder content here. We're running out of things to say, so we're just adding some placeholder text to make this look more realistic."
+    - placement: "top"
+      label: "Offcanvas top"
+      target: "#offcanvasTop"
+      controls: "offcanvasTop"
+      offcanvasClass: "offcanvas offcanvas-top"
+      id: "offcanvasTop"
+      labelledby: "offcanvasTopLabel"
+      title: "Offcanvas top"
+      content: "Placeholder content for this offcanvas example. As you'd expect, we have some placeholder content here. We're running out of things to say, so we're just adding some placeholder text to make this look more realistic."
+    - placement: "bottom"
+      label: "Offcanvas bottom"
+      target: "#offcanvasBottom"
+      controls: "offcanvasBottom"
+      offcanvasClass: "offcanvas offcanvas-bottom"
+      id: "offcanvasBottom"
+      labelledby: "offcanvasBottomLabel"
+      title: "Offcanvas bottom"
+      content: "Placeholder content for this offcanvas example. As you'd expect, we have some placeholder content here. We're running out of things to say, so we're just adding some placeholder text to make this look more realistic." 

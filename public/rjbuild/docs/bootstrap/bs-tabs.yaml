@@ -1,0 +1,162 @@
+renderView:
+  - type: h2
+    content: "Tabs Bootstrap"
+
+  # Affichage du code Reactive-JSON
+  - type: RjBuildDescriber
+    title: "Reactive-JSON build"
+    description:
+      - type: div
+        content: Tabs Bootstrap dynamiques avec templates pour la navigation et le contenu.
+    toDescribe:
+      renderView:
+        - type: h2
+          content: "Tabs Bootstrap"
+        
+        # Tabs Bootstrap
+        - type: div
+          attributes:
+            class: "container mt-4"
+          content:
+            - type: ul
+              attributes:
+                class: "nav nav-tabs"
+                id: "myTab"
+                role: "tablist"
+              content:
+                - type: Switch
+                  content: ~.tabs
+                  singleOption:
+                    load: tabNavTemplate
+            
+            - type: div
+              attributes:
+                class: "tab-content"
+                id: "myTabContent"
+              content:
+                - type: Switch
+                  content: ~.tabs
+                  singleOption:
+                    load: tabContentTemplate
+
+      templates:
+        tabNavTemplate:
+          type: li
+          attributes:
+            class: "nav-item"
+            role: "presentation"
+          content:
+            - type: button
+              attributes:
+                class: ~.nav_class
+                id: ~.nav_id
+                data-bs-toggle: "tab"
+                data-bs-target: ~.target
+                type: "button"
+                role: "tab"
+                aria-controls: ~.aria_controls
+                aria-selected: ~.aria_selected
+              content: ~.title
+
+        tabContentTemplate:
+          type: div
+          attributes:
+            class: ~.content_class
+            id: ~.content_id
+            role: "tabpanel"
+            aria-labelledby: ~.aria_labelledby
+          content: ~.content
+
+      data:
+        tabs:
+          - title: "Accueil"
+            nav_class: "nav-link active"
+            nav_id: "home-tab"
+            target: "#home"
+            aria_controls: "home"
+            aria_selected: "true"
+            content_class: "tab-pane fade show active"
+            content_id: "home"
+            aria_labelledby: "home-tab"
+            content: "Bienvenue sur l'onglet Accueil."
+          - title: "Profil"
+            nav_class: "nav-link"
+            nav_id: "profile-tab"
+            target: "#profile"
+            aria_controls: "profile"
+            aria_selected: "false"
+            content_class: "tab-pane fade"
+            content_id: "profile"
+            aria_labelledby: "profile-tab"
+            content: "Ceci est l'onglet Profil."
+          - title: "Contact"
+            nav_class: "nav-link"
+            nav_id: "contact-tab"
+            target: "#contact"
+            aria_controls: "contact"
+            aria_selected: "false"
+            content_class: "tab-pane fade"
+            content_id: "contact"
+            aria_labelledby: "contact-tab"
+            content: "Contactez-nous via cet onglet."
+
+templates:
+  tabNavTemplate:
+    type: li
+    attributes:
+      class: "nav-item"
+      role: "presentation"
+    content:
+      - type: button
+        attributes:
+          class: ~.nav_class
+          id: ~.nav_id
+          data-bs-toggle: "tab"
+          data-bs-target: ~.target
+          type: "button"
+          role: "tab"
+          aria-controls: ~.aria_controls
+          aria-selected: ~.aria_selected
+        content: ~.title
+
+  tabContentTemplate:
+    type: div
+    attributes:
+      class: ~.content_class
+      id: ~.content_id
+      role: "tabpanel"
+      aria-labelledby: ~.aria_labelledby
+    content: ~.content
+
+data:
+  tabs:
+    - title: "Accueil"
+      nav_class: "nav-link active"
+      nav_id: "home-tab"
+      target: "#home"
+      aria_controls: "home"
+      aria_selected: "true"
+      content_class: "tab-pane fade show active"
+      content_id: "home"
+      aria_labelledby: "home-tab"
+      content: "Bienvenue sur l'onglet Accueil."
+    - title: "Profil"
+      nav_class: "nav-link"
+      nav_id: "profile-tab"
+      target: "#profile"
+      aria_controls: "profile"
+      aria_selected: "false"
+      content_class: "tab-pane fade"
+      content_id: "profile"
+      aria_labelledby: "profile-tab"
+      content: "Ceci est l'onglet Profil."
+    - title: "Contact"
+      nav_class: "nav-link"
+      nav_id: "contact-tab"
+      target: "#contact"
+      aria_controls: "contact"
+      aria_selected: "false"
+      content_class: "tab-pane fade"
+      content_id: "contact"
+      aria_labelledby: "contact-tab"
+      content: "Contactez-nous via cet onglet." 

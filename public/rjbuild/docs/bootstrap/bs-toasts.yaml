@@ -1,0 +1,363 @@
+renderView:
+  - type: h2
+    content: "Toasts Bootstrap"
+  # Affichage du code Reactive-JSON
+  - type: RjBuildDescriber
+    title: "Reactive-JSON build"
+    description:
+      - type: div
+        content: Toasts Bootstrap avec différents placements, couleurs et contenus personnalisés.
+    toDescribe:
+      renderView:
+        - type: h2
+          content: "Toasts Bootstrap"
+        
+        # Vue d'ensemble
+        - type: h3
+          content: "Vue d'ensemble"
+        - type: p
+          content: "Les toasts sont des notifications légères et flexibles conçues pour imiter les notifications push qui ont été populaires sur les systèmes d'exploitation mobiles et de bureau."
+        
+        # Exemple de base
+        - type: h3
+          content: "Exemple de base"
+        - type: p
+          content: "Les toasts sont aussi flexibles que vous le souhaitez et ont très peu de styles requis. À des fins de démonstration, nos toasts sont initialement masqués. Vous pouvez les afficher en cliquant sur le bouton ci-dessous."
+        
+        - type: button
+          attributes:
+            type: "button"
+            class: "btn btn-primary"
+            id: "liveToastBtn"
+          content: "Show live toast"
+        
+        - type: div
+          attributes:
+            class: "toast-container position-fixed bottom-0 end-0 p-3"
+          content:
+            - type: div
+              attributes:
+                id: "liveToast"
+                class: "toast"
+                role: "alert"
+                aria-live: "assertive"
+                aria-atomic: "true"
+              content:
+                - type: div
+                  attributes:
+                    class: "toast-header"
+                  content:
+                    - type: img
+                      attributes:
+                        src: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0iY3VycmVudENvbG9yIiBjbGFzcz0iYmkgYmktY2hlY2stY2lyY2xlLXRleHQtc3VjY2VzcyBtZS0yIj48cGF0aCBkPSJNMTAgMThhOCA4IDAgMSAwIDAtMTYgOCA4IDAgMCAwIDAgMTZ6bTMuODU3LTkuODU5YS41LjUgMCAwIDAtLjcxNy0uNzE3TDEwIDkuMjUgOC44NiA4LjE0MWEuNS41IDAgMSAwLS43MTcuNzE3bDEuNSAxLjVhLjUuNSAwIDAgMCAuNzE3IDBsMy41LTMuNXoiLz48L3N2Zz4="
+                        class: "rounded me-2"
+                        alt: ""
+                        style:
+                          width: "20px"
+                    - type: strong
+                      attributes:
+                        class: "me-auto"
+                      content: "Bootstrap"
+                    - type: small
+                      content: "11 mins ago"
+                    - type: button
+                      attributes:
+                        type: "button"
+                        class: "btn-close"
+                        data-bs-dismiss: "toast"
+                        aria-label: "Close"
+                - type: div
+                  attributes:
+                    class: "toast-body"
+                  content: "Hello, world! This is a toast message."
+
+        # Placement
+        - type: h3
+          content: "Placement"
+        - type: p
+          content: "Placez les toasts avec des classes utilitaires de positionnement. La classe .toast-container est requise."
+        
+        - type: div
+          attributes:
+            class: "row"
+          content:
+            - type: Switch
+              content: ~.placementExamples
+              singleOption:
+                load: placementTemplate
+
+        # Couleurs
+        - type: h3
+          content: "Couleurs"
+        - type: p
+          content: "Vous pouvez également personnaliser les couleurs des toasts."
+        
+        - type: div
+          attributes:
+            class: "row"
+          content:
+            - type: Switch
+              content: ~.colorExamples
+              singleOption:
+                load: colorTemplate
+
+        # Toasts avec contenu personnalisé
+        - type: h3
+          content: "Toasts avec contenu personnalisé"
+        - type: p
+          content: "Vous pouvez personnaliser le contenu des toasts avec du HTML."
+        
+        - type: div
+          attributes:
+            class: "toast-container position-fixed bottom-0 end-0 p-3"
+          content:
+            - type: div
+              attributes:
+                class: "toast"
+                role: "alert"
+                aria-live: "assertive"
+                aria-atomic: "true"
+              content:
+                - type: div
+                  attributes:
+                    class: "toast-header bg-primary text-white"
+                  content:
+                    - type: strong
+                      attributes:
+                        class: "me-auto"
+                      content: "Custom Toast"
+                    - type: small
+                      content: "Just now"
+                    - type: button
+                      attributes:
+                        type: "button"
+                        class: "btn-close btn-close-white"
+                        data-bs-dismiss: "toast"
+                        aria-label: "Close"
+                - type: div
+                  attributes:
+                    class: "toast-body"
+                  content:
+                    - type: p
+                      content: "Ce toast a un contenu personnalisé avec du HTML."
+                    - type: button
+                      attributes:
+                        type: "button"
+                        class: "btn btn-primary btn-sm"
+                      content: "Action"
+
+      templates:
+        placementTemplate:
+          type: div
+          attributes:
+            class: "col-md-4 mb-3"
+          content:
+            - type: div
+              attributes:
+                class: ~.containerClass
+              content:
+                - type: div
+                  attributes:
+                    class: "toast"
+                    role: "alert"
+                    aria-live: "assertive"
+                    aria-atomic: "true"
+                  content:
+                    - type: div
+                      attributes:
+                        class: "toast-header"
+                      content:
+                        - type: strong
+                          attributes:
+                            class: "me-auto"
+                          content: ~.title
+                        - type: small
+                          content: ~.time
+                        - type: button
+                          attributes:
+                            type: "button"
+                            class: "btn-close"
+                            data-bs-dismiss: "toast"
+                            aria-label: "Close"
+                    - type: div
+                      attributes:
+                        class: "toast-body"
+                      content: ~.content
+
+        colorTemplate:
+          type: div
+          attributes:
+            class: "col-md-6 mb-3"
+          content:
+            - type: div
+              attributes:
+                class: "toast"
+                role: "alert"
+                aria-live: "assertive"
+                aria-atomic: "true"
+              content:
+                - type: div
+                  attributes:
+                    class: ~.headerClass
+                  content:
+                    - type: strong
+                      attributes:
+                        class: "me-auto"
+                      content: ~.title
+                    - type: small
+                      content: ~.time
+                    - type: button
+                      attributes:
+                        type: "button"
+                        class: ~.closeClass
+                        data-bs-dismiss: "toast"
+                        aria-label: "Close"
+                - type: div
+                  attributes:
+                    class: "toast-body"
+                  content: ~.content
+
+      data:
+        placementExamples:
+          - containerClass: "toast-container position-fixed top-0 start-0 p-3"
+            title: "Top Left"
+            time: "Just now"
+            content: "Toast en haut à gauche"
+          - containerClass: "toast-container position-fixed top-0 start-50 translate-middle-x p-3"
+            title: "Top Center"
+            time: "Just now"
+            content: "Toast en haut au centre"
+          - containerClass: "toast-container position-fixed top-0 end-0 p-3"
+            title: "Top Right"
+            time: "Just now"
+            content: "Toast en haut à droite"
+
+        colorExamples:
+          - headerClass: "toast-header bg-primary text-white"
+            title: "Primary Toast"
+            time: "Just now"
+            content: "Toast avec couleur primaire"
+            closeClass: "btn-close btn-close-white"
+          - headerClass: "toast-header bg-success text-white"
+            title: "Success Toast"
+            time: "Just now"
+            content: "Toast avec couleur succès"
+            closeClass: "btn-close btn-close-white"
+          - headerClass: "toast-header bg-warning text-dark"
+            title: "Warning Toast"
+            time: "Just now"
+            content: "Toast avec couleur avertissement"
+            closeClass: "btn-close"
+          - headerClass: "toast-header bg-danger text-white"
+            title: "Danger Toast"
+            time: "Just now"
+            content: "Toast avec couleur danger"
+            closeClass: "btn-close btn-close-white"
+
+templates:
+  placementTemplate:
+    type: div
+    attributes:
+      class: "col-md-4 mb-3"
+    content:
+      - type: div
+        attributes:
+          class: ~.containerClass
+        content:
+          - type: div
+            attributes:
+              class: "toast"
+              role: "alert"
+              aria-live: "assertive"
+              aria-atomic: "true"
+            content:
+              - type: div
+                attributes:
+                  class: "toast-header"
+                content:
+                  - type: strong
+                    attributes:
+                      class: "me-auto"
+                    content: ~.title
+                  - type: small
+                    content: ~.time
+                  - type: button
+                    attributes:
+                      type: "button"
+                      class: "btn-close"
+                      data-bs-dismiss: "toast"
+                      aria-label: "Close"
+              - type: div
+                attributes:
+                  class: "toast-body"
+                content: ~.content
+
+  colorTemplate:
+    type: div
+    attributes:
+      class: "col-md-6 mb-3"
+    content:
+      - type: div
+        attributes:
+          class: "toast"
+          role: "alert"
+          aria-live: "assertive"
+          aria-atomic: "true"
+        content:
+          - type: div
+            attributes:
+              class: ~.headerClass
+            content:
+              - type: strong
+                attributes:
+                  class: "me-auto"
+                content: ~.title
+              - type: small
+                content: ~.time
+              - type: button
+                attributes:
+                  type: "button"
+                  class: ~.closeClass
+                  data-bs-dismiss: "toast"
+                  aria-label: "Close"
+          - type: div
+            attributes:
+              class: "toast-body"
+            content: ~.content
+
+data:
+  placementExamples:
+    - containerClass: "toast-container position-fixed top-0 start-0 p-3"
+      title: "Top Left"
+      time: "Just now"
+      content: "Toast en haut à gauche"
+    - containerClass: "toast-container position-fixed top-0 start-50 translate-middle-x p-3"
+      title: "Top Center"
+      time: "Just now"
+      content: "Toast en haut au centre"
+    - containerClass: "toast-container position-fixed top-0 end-0 p-3"
+      title: "Top Right"
+      time: "Just now"
+      content: "Toast en haut à droite"
+
+  colorExamples:
+    - headerClass: "toast-header bg-primary text-white"
+      title: "Primary Toast"
+      time: "Just now"
+      content: "Toast avec couleur primaire"
+      closeClass: "btn-close btn-close-white"
+    - headerClass: "toast-header bg-success text-white"
+      title: "Success Toast"
+      time: "Just now"
+      content: "Toast avec couleur succès"
+      closeClass: "btn-close btn-close-white"
+    - headerClass: "toast-header bg-warning text-dark"
+      title: "Warning Toast"
+      time: "Just now"
+      content: "Toast avec couleur avertissement"
+      closeClass: "btn-close"
+    - headerClass: "toast-header bg-danger text-white"
+      title: "Danger Toast"
+      time: "Just now"
+      content: "Toast avec couleur danger"
+      closeClass: "btn-close btn-close-white" 

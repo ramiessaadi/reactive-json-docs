@@ -1,0 +1,307 @@
+renderView:
+  - type: h2
+    content: "Collapse Bootstrap"
+  # Affichage du code Reactive-JSON
+  - type: RjBuildDescriber
+    title: "Reactive-JSON build"
+    description:
+      - type: div
+        content: Collapse Bootstrap avec différents types de déclencheurs et de contenu.
+    toDescribe:
+      renderView:
+        - type: h2
+          content: "Collapse Bootstrap"
+        
+        # Exemple de base
+        - type: h3
+          content: "Exemple de base"
+        - type: p
+          content: "Cliquez sur les boutons ci-dessous pour afficher et masquer un autre élément via les changements de classe :"
+        - type: ul
+          content:
+            - type: li
+              content: ".collapse masque le contenu"
+            - type: li
+              content: ".collapsing est appliqué pendant les transitions"
+            - type: li
+              content: ".collapse.show affiche le contenu"
+        
+        - type: p
+          content:
+            - type: a
+              attributes:
+                class: "btn btn-primary"
+                data-bs-toggle: "collapse"
+                href: "#collapseExample"
+                role: "button"
+                aria-expanded: "false"
+                aria-controls: "collapseExample"
+              content: "Link with href"
+            - type: button
+              attributes:
+                class: "btn btn-primary"
+                type: "button"
+                data-bs-toggle: "collapse"
+                data-bs-target: "#collapseExample"
+                aria-expanded: "false"
+                aria-controls: "collapseExample"
+              content: "Button with data-bs-target"
+        
+        - type: div
+          attributes:
+            class: "collapse"
+            id: "collapseExample"
+          content:
+            - type: div
+              attributes:
+                class: "card card-body"
+              content: "Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger."
+
+        # Cibles multiples
+        - type: h3
+          content: "Cibles multiples"
+        - type: p
+          content: "Un <button> ou <a> peut afficher et masquer plusieurs éléments en les référençant avec un sélecteur dans son attribut href ou data-bs-target."
+        
+        - type: p
+          content:
+            - type: a
+              attributes:
+                class: "btn btn-primary"
+                data-bs-toggle: "collapse"
+                href: "#multiCollapseExample1"
+                role: "button"
+                aria-expanded: "false"
+                aria-controls: "multiCollapseExample1"
+              content: "Toggle first element"
+            - type: button
+              attributes:
+                class: "btn btn-primary"
+                type: "button"
+                data-bs-toggle: "collapse"
+                data-bs-target: "#multiCollapseExample2"
+                aria-expanded: "false"
+                aria-controls: "multiCollapseExample2"
+              content: "Toggle second element"
+            - type: button
+              attributes:
+                class: "btn btn-primary"
+                type: "button"
+                data-bs-toggle: "collapse"
+                data-bs-target: ".multi-collapse"
+                aria-expanded: "false"
+                aria-controls: "multiCollapseExample1 multiCollapseExample2"
+              content: "Toggle both elements"
+        
+        - type: div
+          attributes:
+            class: "row"
+          content:
+            - type: div
+              attributes:
+                class: "col"
+              content:
+                - type: div
+                  attributes:
+                    class: "collapse multi-collapse"
+                    id: "multiCollapseExample1"
+                  content:
+                    - type: div
+                      attributes:
+                        class: "card card-body"
+                      content: "Some placeholder content for the first collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger."
+            - type: div
+              attributes:
+                class: "col"
+              content:
+                - type: div
+                  attributes:
+                    class: "collapse multi-collapse"
+                    id: "multiCollapseExample2"
+                  content:
+                    - type: div
+                      attributes:
+                        class: "card card-body"
+                      content: "Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger."
+
+        # Exemple avec accordéon
+        - type: h3
+          content: "Exemple avec accordéon"
+        - type: p
+          content: "Utilisez data-bs-parent pour créer un comportement d'accordéon où un seul élément peut être ouvert à la fois."
+        
+        - type: div
+          attributes:
+            class: "accordion"
+            id: "accordionExample"
+          content:
+            - type: Switch
+              content: ~.accordionItems
+              singleOption:
+                load: accordionItemTemplate
+
+        # Exemple avec contenu personnalisé
+        - type: h3
+          content: "Exemple avec contenu personnalisé"
+        - type: p
+          content: "Le collapse peut contenir n'importe quel type de contenu."
+        
+        - type: button
+          attributes:
+            class: "btn btn-success"
+            type: "button"
+            data-bs-toggle: "collapse"
+            data-bs-target: "#customCollapse"
+            aria-expanded: "false"
+            aria-controls: "customCollapse"
+          content: "Toggle custom content"
+        
+        - type: div
+          attributes:
+            class: "collapse"
+            id: "customCollapse"
+          content:
+            - type: div
+              attributes:
+                class: "card card-body"
+              content:
+                - type: h5
+                  content: "Contenu personnalisé"
+                - type: p
+                  content: "Ce collapse contient du contenu personnalisé avec différents éléments."
+                - type: ul
+                  content:
+                    - type: li
+                      content: "Liste d'éléments"
+                    - type: li
+                      content: "Avec du contenu"
+                    - type: li
+                      content: "Et des styles"
+                - type: button
+                  attributes:
+                    class: "btn btn-primary"
+                  content: "Bouton dans le collapse"
+
+      templates:
+        accordionItemTemplate:
+          type: div
+          attributes:
+            class: "accordion-item"
+          content:
+            - type: h2
+              attributes:
+                class: "accordion-header"
+                id: ~.headerId
+              content:
+                - type: button
+                  attributes:
+                    class: "accordion-button ~.buttonClass"
+                    type: "button"
+                    data-bs-toggle: "collapse"
+                    data-bs-target: ~.target
+                    aria-expanded: ~.ariaExpanded
+                    aria-controls: ~.controls
+                  content: ~.title
+            - type: div
+              attributes:
+                class: ~.collapseClass
+                id: ~.collapseId
+                aria-labelledby: ~.headerId
+                data-bs-parent: "#accordionExample"
+              content:
+                - type: div
+                  attributes:
+                    class: "accordion-body"
+                  content: ~.content
+
+      data:
+        accordionItems:
+          - headerId: "headingOne"
+            buttonClass: ""
+            target: "#collapseOne"
+            ariaExpanded: "true"
+            controls: "collapseOne"
+            title: "Accordion Item #1"
+            collapseClass: "accordion-collapse collapse show"
+            collapseId: "collapseOne"
+            content: "This is the first item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions."
+          - headerId: "headingTwo"
+            buttonClass: "collapsed"
+            target: "#collapseTwo"
+            ariaExpanded: "false"
+            controls: "collapseTwo"
+            title: "Accordion Item #2"
+            collapseClass: "accordion-collapse collapse"
+            collapseId: "collapseTwo"
+            content: "This is the second item's accordion body. It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions."
+          - headerId: "headingThree"
+            buttonClass: "collapsed"
+            target: "#collapseThree"
+            ariaExpanded: "false"
+            controls: "collapseThree"
+            title: "Accordion Item #3"
+            collapseClass: "accordion-collapse collapse"
+            collapseId: "collapseThree"
+            content: "This is the third item's accordion body. It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions."
+
+templates:
+  accordionItemTemplate:
+    type: div
+    attributes:
+      class: "accordion-item"
+    content:
+      - type: h2
+        attributes:
+          class: "accordion-header"
+          id: ~.headerId
+        content:
+          - type: button
+            attributes:
+              class: "accordion-button ~.buttonClass"
+              type: "button"
+              data-bs-toggle: "collapse"
+              data-bs-target: ~.target
+              aria-expanded: ~.ariaExpanded
+              aria-controls: ~.controls
+            content: ~.title
+      - type: div
+        attributes:
+          class: ~.collapseClass
+          id: ~.collapseId
+          aria-labelledby: ~.headerId
+          data-bs-parent: "#accordionExample"
+        content:
+          - type: div
+            attributes:
+              class: "accordion-body"
+            content: ~.content
+
+data:
+  accordionItems:
+    - headerId: "headingOne"
+      buttonClass: ""
+      target: "#collapseOne"
+      ariaExpanded: "true"
+      controls: "collapseOne"
+      title: "Accordion Item #1"
+      collapseClass: "accordion-collapse collapse show"
+      collapseId: "collapseOne"
+      content: "This is the first item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions."
+    - headerId: "headingTwo"
+      buttonClass: "collapsed"
+      target: "#collapseTwo"
+      ariaExpanded: "false"
+      controls: "collapseTwo"
+      title: "Accordion Item #2"
+      collapseClass: "accordion-collapse collapse"
+      collapseId: "collapseTwo"
+      content: "This is the second item's accordion body. It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions."
+    - headerId: "headingThree"
+      buttonClass: "collapsed"
+      target: "#collapseThree"
+      ariaExpanded: "false"
+      controls: "collapseThree"
+      title: "Accordion Item #3"
+      collapseClass: "accordion-collapse collapse"
+      collapseId: "collapseThree"
+      content: "This is the third item's accordion body. It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions." 

@@ -1,0 +1,189 @@
+renderView:
+  - type: h2
+    content: "Tooltips Bootstrap"
+  # Affichage du code Reactive-JSON
+  - type: RjBuildDescriber
+    title: "Reactive-JSON build"
+    description:
+      - type: div
+        content: Tooltips Bootstrap avec différentes directions, contenus HTML et personnalisations.
+    toDescribe:
+      renderView:
+        - type: h2
+          content: "Tooltips Bootstrap"
+        
+        # Vue d'ensemble
+        - type: h3
+          content: "Vue d'ensemble"
+        - type: p
+          content: "Documentation et exemples pour ajouter des tooltips personnalisés Bootstrap à n'importe quel élément de votre site."
+        - type: p
+          content: "Les tooltips s'appuient sur la bibliothèque tierce Popper pour le positionnement. Vous devez inclure popper.min.js avant bootstrap.js ou utiliser bootstrap.bundle.min.js qui contient Popper."
+        
+        # Exemple de base
+        - type: h3
+          content: "Exemple de base"
+        - type: p
+          content: "Les tooltips Bootstrap sont activés par défaut. Pour les activer, vous devez les initialiser vous-même."
+        
+        - type: button
+          attributes:
+            type: "button"
+            class: "btn btn-secondary"
+            data-bs-toggle: "tooltip"
+            data-bs-placement: "top"
+            title: "Tooltip on top"
+          content: "Tooltip on top"
+        
+        - type: button
+          attributes:
+            type: "button"
+            class: "btn btn-secondary"
+            data-bs-toggle: "tooltip"
+            data-bs-placement: "right"
+            title: "Tooltip on right"
+          content: "Tooltip on right"
+        
+        - type: button
+          attributes:
+            type: "button"
+            class: "btn btn-secondary"
+            data-bs-toggle: "tooltip"
+            data-bs-placement: "bottom"
+            title: "Tooltip on bottom"
+          content: "Tooltip on bottom"
+        
+        - type: button
+          attributes:
+            type: "button"
+            class: "btn btn-secondary"
+            data-bs-toggle: "tooltip"
+            data-bs-placement: "left"
+            title: "Tooltip on left"
+          content: "Tooltip on left"
+
+        # Directions
+        - type: h3
+          content: "Directions"
+        - type: p
+          content: "Les tooltips peuvent être positionnés dans quatre directions : top, right, bottom, et left."
+        
+        - type: div
+          attributes:
+            class: "row"
+          content:
+            - type: Switch
+              content: ~.directionExamples
+              singleOption:
+                load: directionTemplate
+
+        # Tooltips avec HTML
+        - type: h3
+          content: "Tooltips avec HTML"
+        - type: p
+          content: "Vous pouvez insérer du HTML dans les tooltips avec l'option html."
+        
+        - type: button
+          attributes:
+            type: "button"
+            class: "btn btn-secondary"
+            data-bs-toggle: "tooltip"
+            data-bs-html: "true"
+            title: "<em>Tooltip</em> <u>with</u> <b>HTML</b>"
+          content: "Tooltip with HTML"
+
+        # Tooltips avec contenu personnalisé
+        - type: h3
+          content: "Tooltips avec contenu personnalisé"
+        - type: p
+          content: "Vous pouvez personnaliser l'apparence des tooltips avec des classes CSS personnalisées."
+        
+        - type: button
+          attributes:
+            type: "button"
+            class: "btn btn-secondary"
+            data-bs-toggle: "tooltip"
+            data-bs-custom-class: "custom-tooltip"
+            title: "This top tooltip is themed via CSS variables."
+          content: "Custom tooltip"
+
+        # Tooltips sur éléments désactivés
+        - type: h3
+          content: "Tooltips sur éléments désactivés"
+        - type: p
+          content: "Les éléments avec l'attribut disabled ne sont pas interactifs, ce qui signifie que les utilisateurs ne peuvent pas les survoler ou cliquer dessus pour déclencher un tooltip. Comme solution de contournement, vous voudrez déclencher le tooltip depuis un wrapper <div> ou <span>, idéalement rendu focusable au clavier en utilisant tabindex='0'."
+        
+        - type: span
+          attributes:
+            class: "d-inline-block"
+            tabindex: "0"
+            data-bs-toggle: "tooltip"
+            data-bs-trigger: "hover focus"
+            title: "Disabled tooltip"
+          content:
+            - type: button
+              attributes:
+                class: "btn btn-primary"
+                type: "button"
+                disabled: "disabled"
+              content: "Disabled button"
+
+      templates:
+        directionTemplate:
+          type: div
+          attributes:
+            class: "col-md-3 mb-3"
+          content:
+            - type: button
+              attributes:
+                type: "button"
+                class: "btn btn-secondary"
+                data-bs-toggle: "tooltip"
+                data-bs-placement: ~.placement
+                title: ~.title
+              content: ~.label
+
+      data:
+        directionExamples:
+          - placement: "top"
+            label: "Tooltip on top"
+            title: "Tooltip on top"
+          - placement: "right"
+            label: "Tooltip on right"
+            title: "Tooltip on right"
+          - placement: "bottom"
+            label: "Tooltip on bottom"
+            title: "Tooltip on bottom"
+          - placement: "left"
+            label: "Tooltip on left"
+            title: "Tooltip on left"
+
+templates:
+  directionTemplate:
+    type: div
+    attributes:
+      class: "col-md-3 mb-3"
+    content:
+      - type: button
+        attributes:
+          type: "button"
+          class: "btn btn-secondary"
+          data-bs-toggle: "tooltip"
+          data-bs-placement: ~.placement
+          title: ~.title
+        content: ~.label
+
+data:
+  directionExamples:
+    - placement: "top"
+      label: "Tooltip on top"
+      title: "Tooltip on top"
+    - placement: "right"
+      label: "Tooltip on right"
+      title: "Tooltip on right"
+    - placement: "bottom"
+      label: "Tooltip on bottom"
+      title: "Tooltip on bottom"
+    - placement: "left"
+      label: "Tooltip on left"
+      title: "Tooltip on left" 

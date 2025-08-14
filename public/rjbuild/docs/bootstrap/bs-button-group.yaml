@@ -1,0 +1,501 @@
+renderView:
+  - type: h2
+    content: "Button Group Bootstrap"
+  # Affichage du code Reactive-JSON
+  - type: RjBuildDescriber
+    title: "Reactive-JSON build"
+    description:
+      - type: div
+        content: Groupes de boutons Bootstrap avec différents styles, tailles et variations.
+    toDescribe:
+      renderView:
+        - type: h2
+          content: "Button Group Bootstrap"
+        
+        # Exemple de base
+        - type: h3
+          content: "Exemple de base"
+        - type: p
+          content: "Groupez une série de boutons avec .btn dans .btn-group."
+        
+        - type: div
+          attributes:
+            class: "btn-group"
+            role: "group"
+            aria-label: "Basic example"
+          content:
+            - type: Switch
+              content: ~.basicButtons
+              singleOption:
+                load: buttonTemplate
+
+        # Styles mixtes
+        - type: h3
+          content: "Styles mixtes"
+        - type: p
+          content: "Mélangez différents styles de boutons dans un groupe."
+        
+        - type: div
+          attributes:
+            class: "btn-group"
+            role: "group"
+            aria-label: "Basic mixed styles example"
+          content:
+            - type: Switch
+              content: ~.mixedButtons
+              singleOption:
+                load: buttonTemplate
+
+        # Styles outline
+        - type: h3
+          content: "Styles outline"
+        - type: p
+          content: "Utilisez des boutons outline dans un groupe."
+        
+        - type: div
+          attributes:
+            class: "btn-group"
+            role: "group"
+            aria-label: "Basic outlined example"
+          content:
+            - type: Switch
+              content: ~.outlineButtons
+              singleOption:
+                load: buttonTemplate
+
+        # Groupes de checkboxes
+        - type: h3
+          content: "Groupes de checkboxes"
+        - type: p
+          content: "Combinez des boutons de type checkbox dans un groupe."
+        
+        - type: div
+          attributes:
+            class: "btn-group"
+            role: "group"
+            aria-label: "Basic checkbox toggle button group"
+          content:
+            - type: Switch
+              content: ~.checkboxButtons
+              singleOption:
+                load: checkboxTemplate
+
+        # Groupes de radios
+        - type: h3
+          content: "Groupes de radios"
+        - type: p
+          content: "Combinez des boutons de type radio dans un groupe."
+        
+        - type: div
+          attributes:
+            class: "btn-group"
+            role: "group"
+            aria-label: "Basic radio toggle button group"
+          content:
+            - type: Switch
+              content: ~.radioButtons
+              singleOption:
+                load: radioTemplate
+
+        # Barre d'outils de boutons
+        - type: h3
+          content: "Barre d'outils de boutons"
+        - type: p
+          content: "Combinez des ensembles de groupes de boutons en barres d'outils."
+        
+        - type: div
+          attributes:
+            class: "btn-toolbar"
+            role: "toolbar"
+            aria-label: "Toolbar with button groups"
+          content:
+            - type: Switch
+              content: ~.toolbarGroups
+              singleOption:
+                load: toolbarGroupTemplate
+
+        # Tailles
+        - type: h3
+          content: "Tailles"
+        - type: p
+          content: "Appliquez des tailles différentes aux groupes de boutons."
+        
+        - type: div
+          attributes:
+            class: "mb-3"
+          content:
+            - type: Switch
+              content: ~.sizedGroups
+              singleOption:
+                load: sizedGroupTemplate
+
+        # Variation verticale
+        - type: h3
+          content: "Variation verticale"
+        - type: p
+          content: "Faites apparaître un ensemble de boutons empilés verticalement."
+        
+        - type: div
+          attributes:
+            class: "btn-group-vertical"
+            role: "group"
+            aria-label: "Vertical button group"
+          content:
+            - type: Switch
+              content: ~.verticalButtons
+              singleOption:
+                load: buttonTemplate
+
+      templates:
+        buttonTemplate:
+          type: button
+          attributes:
+            type: "button"
+            class: ~.className
+          content: ~.text
+
+        checkboxTemplate:
+          - type: input
+            attributes:
+              type: "checkbox"
+              class: "btn-check"
+              id: ~.id
+              autocomplete: "off"
+          - type: label
+            attributes:
+              class: "btn btn-outline-primary"
+              for: ~.id
+            content: ~.text
+
+        radioTemplate:
+          - type: input
+            attributes:
+              type: "radio"
+              class: "btn-check"
+              name: ~.name
+              id: ~.id
+              autocomplete: "off"
+              checked: ~.checked
+          - type: label
+            attributes:
+              class: "btn btn-outline-primary"
+              for: ~.id
+            content: ~.text
+
+        toolbarGroupTemplate:
+          type: div
+          attributes:
+            class: ~.className
+            role: "group"
+            aria-label: ~.ariaLabel
+          content:
+            - type: Switch
+              content: ~.buttons
+              singleOption:
+                load: buttonTemplate
+
+        sizedGroupTemplate:
+          type: div
+          attributes:
+            class: ~.className
+            role: "group"
+            aria-label: ~.ariaLabel
+          content:
+            - type: Switch
+              content: ~.buttons
+              singleOption:
+                load: buttonTemplate
+
+      data:
+        basicButtons:
+          - text: "Left"
+            className: "btn btn-primary"
+          - text: "Middle"
+            className: "btn btn-primary"
+          - text: "Right"
+            className: "btn btn-primary"
+        
+        mixedButtons:
+          - text: "Left"
+            className: "btn btn-danger"
+          - text: "Middle"
+            className: "btn btn-warning"
+          - text: "Right"
+            className: "btn btn-success"
+        
+        outlineButtons:
+          - text: "Left"
+            className: "btn btn-outline-primary"
+          - text: "Middle"
+            className: "btn btn-outline-primary"
+          - text: "Right"
+            className: "btn btn-outline-primary"
+        
+        checkboxButtons:
+          - id: "btncheck1"
+            text: "Checkbox 1"
+          - id: "btncheck2"
+            text: "Checkbox 2"
+          - id: "btncheck3"
+            text: "Checkbox 3"
+        
+        radioButtons:
+          - id: "btnradio1"
+            name: "btnradio"
+            text: "Radio 1"
+            checked: true
+          - id: "btnradio2"
+            name: "btnradio"
+            text: "Radio 2"
+            checked: false
+          - id: "btnradio3"
+            name: "btnradio"
+            text: "Radio 3"
+            checked: false
+        
+        toolbarGroups:
+          - className: "btn-group me-2"
+            ariaLabel: "First group"
+            buttons:
+              - text: "1"
+                className: "btn btn-primary"
+              - text: "2"
+                className: "btn btn-primary"
+              - text: "3"
+                className: "btn btn-primary"
+              - text: "4"
+                className: "btn btn-primary"
+          - className: "btn-group me-2"
+            ariaLabel: "Second group"
+            buttons:
+              - text: "5"
+                className: "btn btn-secondary"
+              - text: "6"
+                className: "btn btn-secondary"
+              - text: "7"
+                className: "btn btn-secondary"
+          - className: "btn-group"
+            ariaLabel: "Third group"
+            buttons:
+              - text: "8"
+                className: "btn btn-info"
+        
+        sizedGroups:
+          - className: "btn-group btn-group-lg"
+            ariaLabel: "Large button group"
+            buttons:
+              - text: "Left"
+                className: "btn btn-primary"
+              - text: "Middle"
+                className: "btn btn-primary"
+              - text: "Right"
+                className: "btn btn-primary"
+          - className: "btn-group"
+            ariaLabel: "Default button group"
+            buttons:
+              - text: "Left"
+                className: "btn btn-primary"
+              - text: "Middle"
+                className: "btn btn-primary"
+              - text: "Right"
+                className: "btn btn-primary"
+          - className: "btn-group btn-group-sm"
+            ariaLabel: "Small button group"
+            buttons:
+              - text: "Left"
+                className: "btn btn-primary"
+              - text: "Middle"
+                className: "btn btn-primary"
+              - text: "Right"
+                className: "btn btn-primary"
+        
+        verticalButtons:
+          - text: "Button"
+            className: "btn btn-primary"
+          - text: "Button"
+            className: "btn btn-primary"
+          - text: "Button"
+            className: "btn btn-primary"
+          - text: "Button"
+            className: "btn btn-primary"
+          - text: "Button"
+            className: "btn btn-primary"
+          - text: "Button"
+            className: "btn btn-primary"
+
+templates:
+  buttonTemplate:
+    type: button
+    attributes:
+      type: "button"
+      class: ~.className
+    content: ~.text
+
+  checkboxTemplate:
+    - type: input
+      attributes:
+        type: "checkbox"
+        class: "btn-check"
+        id: ~.id
+        autocomplete: "off"
+    - type: label
+      attributes:
+        class: "btn btn-outline-primary"
+        for: ~.id
+      content: ~.text
+
+  radioTemplate:
+    - type: input
+      attributes:
+        type: "radio"
+        class: "btn-check"
+        name: ~.name
+        id: ~.id
+        autocomplete: "off"
+        checked: ~.checked
+    - type: label
+      attributes:
+        class: "btn btn-outline-primary"
+        for: ~.id
+      content: ~.text
+
+  toolbarGroupTemplate:
+    type: div
+    attributes:
+      class: ~.className
+      role: "group"
+      aria-label: ~.ariaLabel
+    content:
+      - type: Switch
+        content: ~.buttons
+        singleOption:
+          load: buttonTemplate
+
+  sizedGroupTemplate:
+    type: div
+    attributes:
+      class: ~.className
+      role: "group"
+      aria-label: ~.ariaLabel
+    content:
+      - type: Switch
+        content: ~.buttons
+        singleOption:
+          load: buttonTemplate
+
+data:
+  basicButtons:
+    - text: "Left"
+      className: "btn btn-primary"
+    - text: "Middle"
+      className: "btn btn-primary"
+    - text: "Right"
+      className: "btn btn-primary"
+  
+  mixedButtons:
+    - text: "Left"
+      className: "btn btn-danger"
+    - text: "Middle"
+      className: "btn btn-warning"
+    - text: "Right"
+      className: "btn btn-success"
+  
+  outlineButtons:
+    - text: "Left"
+      className: "btn btn-outline-primary"
+    - text: "Middle"
+      className: "btn btn-outline-primary"
+    - text: "Right"
+      className: "btn btn-outline-primary"
+  
+  checkboxButtons:
+    - id: "btncheck1"
+      text: "Checkbox 1"
+    - id: "btncheck2"
+      text: "Checkbox 2"
+    - id: "btncheck3"
+      text: "Checkbox 3"
+  
+  radioButtons:
+    - id: "btnradio1"
+      name: "btnradio"
+      text: "Radio 1"
+      checked: true
+    - id: "btnradio2"
+      name: "btnradio"
+      text: "Radio 2"
+      checked: false
+    - id: "btnradio3"
+      name: "btnradio"
+      text: "Radio 3"
+      checked: false
+  
+  toolbarGroups:
+    - className: "btn-group me-2"
+      ariaLabel: "First group"
+      buttons:
+        - text: "1"
+          className: "btn btn-primary"
+        - text: "2"
+          className: "btn btn-primary"
+        - text: "3"
+          className: "btn btn-primary"
+        - text: "4"
+          className: "btn btn-primary"
+    - className: "btn-group me-2"
+      ariaLabel: "Second group"
+      buttons:
+        - text: "5"
+          className: "btn btn-secondary"
+        - text: "6"
+          className: "btn btn-secondary"
+        - text: "7"
+          className: "btn btn-secondary"
+    - className: "btn-group"
+      ariaLabel: "Third group"
+      buttons:
+        - text: "8"
+          className: "btn btn-info"
+  
+  sizedGroups:
+    - className: "btn-group btn-group-lg"
+      ariaLabel: "Large button group"
+      buttons:
+        - text: "Left"
+          className: "btn btn-primary"
+        - text: "Middle"
+          className: "btn btn-primary"
+        - text: "Right"
+          className: "btn btn-primary"
+    - className: "btn-group"
+      ariaLabel: "Default button group"
+      buttons:
+        - text: "Left"
+          className: "btn btn-primary"
+        - text: "Middle"
+          className: "btn btn-primary"
+        - text: "Right"
+          className: "btn btn-primary"
+    - className: "btn-group btn-group-sm"
+      ariaLabel: "Small button group"
+      buttons:
+        - text: "Left"
+          className: "btn btn-primary"
+        - text: "Middle"
+          className: "btn btn-primary"
+        - text: "Right"
+          className: "btn btn-primary"
+  
+  verticalButtons:
+    - text: "Button"
+      className: "btn btn-primary"
+    - text: "Button"
+      className: "btn btn-primary"
+    - text: "Button"
+      className: "btn btn-primary"
+    - text: "Button"
+      className: "btn btn-primary"
+    - text: "Button"
+      className: "btn btn-primary"
+    - text: "Button"
+      className: "btn btn-primary" 

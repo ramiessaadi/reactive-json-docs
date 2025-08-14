@@ -1,0 +1,331 @@
+renderView:
+  - type: h2
+    content: "Spinners Bootstrap"
+  # Affichage du code Reactive-JSON
+  - type: RjBuildDescriber
+    title: "Reactive-JSON build"
+    description:
+      - type: div
+        content: Spinners Bootstrap avec différentes couleurs, tailles et intégrations dans les boutons.
+    toDescribe:
+      renderView:
+        - type: h2
+          content: "Spinners Bootstrap"
+        
+        # Vue d'ensemble
+        - type: h3
+          content: "Vue d'ensemble"
+        - type: p
+          content: "Indicateurs de chargement Bootstrap pour indiquer l'état de chargement d'un composant ou d'une page. Ils sont construits entièrement avec HTML, CSS et pas de JavaScript."
+        
+        # Spinner de base
+        - type: h3
+          content: "Spinner de base"
+        - type: p
+          content: "Utilisez les spinners Bootstrap pour indiquer l'état de chargement d'un composant ou d'une page."
+        
+        - type: div
+          attributes:
+            class: "spinner-border"
+            role: "status"
+          content:
+            - type: span
+              attributes:
+                class: "visually-hidden"
+              content: "Loading..."
+
+        # Couleurs
+        - type: h3
+          content: "Couleurs"
+        - type: p
+          content: "Les spinners utilisent currentColor, ce qui signifie qu'ils héritent de la couleur du texte parent. Vous pouvez personnaliser leur couleur avec des classes utilitaires de couleur de texte."
+        
+        - type: div
+          attributes:
+            class: "row"
+          content:
+            - type: Switch
+              content: ~.colorExamples
+              singleOption:
+                load: colorTemplate
+
+        # Growing spinner
+        - type: h3
+          content: "Growing spinner"
+        - type: p
+          content: "Si vous ne voulez pas utiliser de bordure, utilisez le spinner en croissance. Il ne fonctionne pas dans Internet Explorer."
+        
+        - type: div
+          attributes:
+            class: "spinner-grow"
+            role: "status"
+          content:
+            - type: span
+              attributes:
+                class: "visually-hidden"
+              content: "Loading..."
+
+        # Growing spinner avec couleurs
+        - type: h3
+          content: "Growing spinner avec couleurs"
+        - type: p
+          content: "Vous pouvez également personnaliser les couleurs des spinners en croissance."
+        
+        - type: div
+          attributes:
+            class: "row"
+          content:
+            - type: Switch
+              content: ~.growingColorExamples
+              singleOption:
+                load: growingColorTemplate
+
+        # Tailles
+        - type: h3
+          content: "Tailles"
+        - type: p
+          content: "Ajoutez .spinner-border-sm et .spinner-grow-sm pour faire un spinner plus petit qui peut être utilisé rapidement dans d'autres composants."
+        
+        - type: div
+          attributes:
+            class: "row"
+          content:
+            - type: div
+              attributes:
+                class: "col-md-6"
+              content:
+                - type: h6
+                  content: "Border spinner"
+                - type: div
+                  attributes:
+                    class: "spinner-border spinner-border-sm"
+                    role: "status"
+                  content:
+                    - type: span
+                      attributes:
+                        class: "visually-hidden"
+                      content: "Loading..."
+                - type: div
+                  attributes:
+                    class: "spinner-border"
+                    role: "status"
+                  content:
+                    - type: span
+                      attributes:
+                        class: "visually-hidden"
+                      content: "Loading..."
+                - type: div
+                  attributes:
+                    class: "spinner-border"
+                    style:
+                      width: "3rem"
+                      height: "3rem"
+                    role: "status"
+                  content:
+                    - type: span
+                      attributes:
+                        class: "visually-hidden"
+                      content: "Loading..."
+            - type: div
+              attributes:
+                class: "col-md-6"
+              content:
+                - type: h6
+                  content: "Growing spinner"
+                - type: div
+                  attributes:
+                    class: "spinner-grow spinner-grow-sm"
+                    role: "status"
+                  content:
+                    - type: span
+                      attributes:
+                        class: "visually-hidden"
+                      content: "Loading..."
+                - type: div
+                  attributes:
+                    class: "spinner-grow"
+                    role: "status"
+                  content:
+                    - type: span
+                      attributes:
+                        class: "visually-hidden"
+                      content: "Loading..."
+                - type: div
+                  attributes:
+                    class: "spinner-grow"
+                    style:
+                      width: "3rem"
+                      height: "3rem"
+                    role: "status"
+                  content:
+                    - type: span
+                      attributes:
+                        class: "visually-hidden"
+                      content: "Loading..."
+
+        # Boutons
+        - type: h3
+          content: "Boutons"
+        - type: p
+          content: "Utilisez des spinners dans des boutons pour indiquer une action en cours."
+        
+        - type: div
+          attributes:
+            class: "row"
+          content:
+            - type: div
+              attributes:
+                class: "col-md-6"
+              content:
+                - type: button
+                  attributes:
+                    class: "btn btn-primary"
+                    type: "button"
+                    disabled: "disabled"
+                  content:
+                    - type: span
+                      attributes:
+                        class: "spinner-border spinner-border-sm"
+                        role: "status"
+                        aria-hidden: "true"
+                    - type: span
+                      content: "Loading..."
+                - type: button
+                  attributes:
+                    class: "btn btn-primary"
+                    type: "button"
+                    disabled: "disabled"
+                  content:
+                    - type: span
+                      attributes:
+                        class: "spinner-border spinner-border-sm me-2"
+                        role: "status"
+                        aria-hidden: "true"
+                    - type: span
+                      content: "Loading..."
+            - type: div
+              attributes:
+                class: "col-md-6"
+              content:
+                - type: button
+                  attributes:
+                    class: "btn btn-primary"
+                    type: "button"
+                    disabled: "disabled"
+                  content:
+                    - type: span
+                      attributes:
+                        class: "spinner-grow spinner-grow-sm"
+                        role: "status"
+                        aria-hidden: "true"
+                    - type: span
+                      content: "Loading..."
+                - type: button
+                  attributes:
+                    class: "btn btn-primary"
+                    type: "button"
+                    disabled: "disabled"
+                  content:
+                    - type: span
+                      attributes:
+                        class: "spinner-grow spinner-grow-sm me-2"
+                        role: "status"
+                        aria-hidden: "true"
+                    - type: span
+                      content: "Loading..."
+
+      templates:
+        colorTemplate:
+          type: div
+          attributes:
+            class: "col-md-2 mb-3"
+          content:
+            - type: div
+              attributes:
+                class: ~.colorClass
+                role: "status"
+              content:
+                - type: span
+                  attributes:
+                    class: "visually-hidden"
+                  content: "Loading..."
+
+        growingColorTemplate:
+          type: div
+          attributes:
+            class: "col-md-2 mb-3"
+          content:
+            - type: div
+              attributes:
+                class: ~.colorClass
+                role: "status"
+              content:
+                - type: span
+                  attributes:
+                    class: "visually-hidden"
+                  content: "Loading..."
+
+      data:
+        colorExamples:
+          - colorClass: "spinner-border text-primary"
+          - colorClass: "spinner-border text-secondary"
+          - colorClass: "spinner-border text-success"
+          - colorClass: "spinner-border text-danger"
+          - colorClass: "spinner-border text-warning"
+          - colorClass: "spinner-border text-info"
+
+        growingColorExamples:
+          - colorClass: "spinner-grow text-primary"
+          - colorClass: "spinner-grow text-secondary"
+          - colorClass: "spinner-grow text-success"
+          - colorClass: "spinner-grow text-danger"
+          - colorClass: "spinner-grow text-warning"
+          - colorClass: "spinner-grow text-info"
+
+templates:
+  colorTemplate:
+    type: div
+    attributes:
+      class: "col-md-2 mb-3"
+    content:
+      - type: div
+        attributes:
+          class: ~.colorClass
+          role: "status"
+        content:
+          - type: span
+            attributes:
+              class: "visually-hidden"
+            content: "Loading..."
+
+  growingColorTemplate:
+    type: div
+    attributes:
+      class: "col-md-2 mb-3"
+    content:
+      - type: div
+        attributes:
+          class: ~.colorClass
+          role: "status"
+        content:
+          - type: span
+            attributes:
+              class: "visually-hidden"
+            content: "Loading..."
+
+data:
+  colorExamples:
+    - colorClass: "spinner-border text-primary"
+    - colorClass: "spinner-border text-secondary"
+    - colorClass: "spinner-border text-success"
+    - colorClass: "spinner-border text-danger"
+    - colorClass: "spinner-border text-warning"
+    - colorClass: "spinner-border text-info"
+
+  growingColorExamples:
+    - colorClass: "spinner-grow text-primary"
+    - colorClass: "spinner-grow text-secondary"
+    - colorClass: "spinner-grow text-success"
+    - colorClass: "spinner-grow text-danger"
+    - colorClass: "spinner-grow text-warning"
+    - colorClass: "spinner-grow text-info" 

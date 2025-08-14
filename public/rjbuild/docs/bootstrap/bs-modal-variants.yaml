@@ -1,0 +1,834 @@
+renderView:
+  - type: h2
+    content: "Modal Variants Bootstrap"
+  
+  # Vue d'ensemble
+  - type: h3
+    content: "Vue d'ensemble"
+  - type: p
+    content: "Documentation et exemples pour utiliser les différentes variantes de modals Bootstrap."
+  
+  # Modal Large
+  - type: h3
+    content: "Modal Large"
+  - type: p
+    content: "Utilisez .modal-lg pour créer un modal plus large."
+  
+  - type: button
+    attributes:
+      type: "button"
+      class: "btn btn-primary"
+      data-bs-toggle: "modal"
+      data-bs-target: "#modalLarge"
+    content: "Ouvrir le modal large"
+  
+  - type: div
+    attributes:
+      class: "modal fade"
+      id: "modalLarge"
+      tabindex: "-1"
+      aria-labelledby: "modalLargeLabel"
+      aria-hidden: "true"
+    content:
+      - type: div
+        attributes:
+          class: "modal-dialog modal-lg"
+        content:
+          - type: div
+            attributes:
+              class: "modal-content"
+            content:
+              - type: div
+                attributes:
+                  class: "modal-header"
+                content:
+                  - type: h5
+                    attributes:
+                      class: "modal-title"
+                      id: "modalLargeLabel"
+                    content: "Modal Large"
+                  - type: button
+                    attributes:
+                      type: "button"
+                      class: "btn-close"
+                      data-bs-dismiss: "modal"
+                      aria-label: "Close"
+              - type: div
+                attributes:
+                  class: "modal-body"
+                content: "Ceci est un modal large (modal-lg)."
+              - type: div
+                attributes:
+                  class: "modal-footer"
+                content:
+                  - type: button
+                    attributes:
+                      type: "button"
+                      class: "btn btn-secondary"
+                      data-bs-dismiss: "modal"
+                    content: "Fermer"
+                  - type: button
+                    attributes:
+                      type: "button"
+                      class: "btn btn-primary"
+                    content: "Sauvegarder"
+  
+  # Modal Extra Large
+  - type: h3
+    content: "Modal Extra Large"
+  - type: p
+    content: "Utilisez .modal-xl pour créer un modal extra large."
+  
+  - type: button
+    attributes:
+      type: "button"
+      class: "btn btn-primary"
+      data-bs-toggle: "modal"
+      data-bs-target: "#modalXl"
+    content: "Ouvrir le modal extra large"
+  
+  - type: div
+    attributes:
+      class: "modal fade"
+      id: "modalXl"
+      tabindex: "-1"
+      aria-labelledby: "modalXlLabel"
+      aria-hidden: "true"
+    content:
+      - type: div
+        attributes:
+          class: "modal-dialog modal-xl"
+        content:
+          - type: div
+            attributes:
+              class: "modal-content"
+            content:
+              - type: div
+                attributes:
+                  class: "modal-header"
+                content:
+                  - type: h5
+                    attributes:
+                      class: "modal-title"
+                      id: "modalXlLabel"
+                    content: "Modal Extra Large"
+                  - type: button
+                    attributes:
+                      type: "button"
+                      class: "btn-close"
+                      data-bs-dismiss: "modal"
+                      aria-label: "Close"
+              - type: div
+                attributes:
+                  class: "modal-body"
+                content: "Ceci est un modal extra large (modal-xl)."
+              - type: div
+                attributes:
+                  class: "modal-footer"
+                content:
+                  - type: button
+                    attributes:
+                      type: "button"
+                      class: "btn btn-secondary"
+                      data-bs-dismiss: "modal"
+                    content: "Fermer"
+                  - type: button
+                    attributes:
+                      type: "button"
+                      class: "btn btn-primary"
+                    content: "Sauvegarder"
+  
+  # Modal Fullscreen
+  - type: h3
+    content: "Modal Fullscreen"
+  - type: p
+    content: "Utilisez .modal-fullscreen pour créer un modal qui occupe tout l'écran."
+  
+  - type: button
+    attributes:
+      type: "button"
+      class: "btn btn-primary"
+      data-bs-toggle: "modal"
+      data-bs-target: "#modalFullscreen"
+    content: "Ouvrir le modal fullscreen"
+  
+  - type: div
+    attributes:
+      class: "modal fade"
+      id: "modalFullscreen"
+      tabindex: "-1"
+      aria-labelledby: "modalFullscreenLabel"
+      aria-hidden: "true"
+    content:
+      - type: div
+        attributes:
+          class: "modal-dialog modal-fullscreen"
+        content:
+          - type: div
+            attributes:
+              class: "modal-content"
+            content:
+              - type: div
+                attributes:
+                  class: "modal-header"
+                content:
+                  - type: h5
+                    attributes:
+                      class: "modal-title"
+                      id: "modalFullscreenLabel"
+                    content: "Modal Fullscreen"
+                  - type: button
+                    attributes:
+                      type: "button"
+                      class: "btn-close"
+                      data-bs-dismiss: "modal"
+                      aria-label: "Close"
+              - type: div
+                attributes:
+                  class: "modal-body"
+                content: "Ceci est un modal fullscreen (modal-fullscreen)."
+              - type: div
+                attributes:
+                  class: "modal-footer"
+                content:
+                  - type: button
+                    attributes:
+                      type: "button"
+                      class: "btn btn-secondary"
+                      data-bs-dismiss: "modal"
+                    content: "Fermer"
+                  - type: button
+                    attributes:
+                      type: "button"
+                      class: "btn btn-primary"
+                    content: "Sauvegarder"
+  
+  # Modal Centré
+  - type: h3
+    content: "Modal Centré"
+  - type: p
+    content: "Utilisez .modal-dialog-centered pour centrer verticalement le modal."
+  
+  - type: button
+    attributes:
+      type: "button"
+      class: "btn btn-primary"
+      data-bs-toggle: "modal"
+      data-bs-target: "#modalCentered"
+    content: "Ouvrir le modal centré"
+  
+  - type: div
+    attributes:
+      class: "modal fade"
+      id: "modalCentered"
+      tabindex: "-1"
+      aria-labelledby: "modalCenteredLabel"
+      aria-hidden: "true"
+    content:
+      - type: div
+        attributes:
+          class: "modal-dialog modal-dialog-centered"
+        content:
+          - type: div
+            attributes:
+              class: "modal-content"
+            content:
+              - type: div
+                attributes:
+                  class: "modal-header"
+                content:
+                  - type: h5
+                    attributes:
+                      class: "modal-title"
+                      id: "modalCenteredLabel"
+                    content: "Modal Centré"
+                  - type: button
+                    attributes:
+                      type: "button"
+                      class: "btn-close"
+                      data-bs-dismiss: "modal"
+                      aria-label: "Close"
+              - type: div
+                attributes:
+                  class: "modal-body"
+                content: "Ceci est un modal centré verticalement."
+              - type: div
+                attributes:
+                  class: "modal-footer"
+                content:
+                  - type: button
+                    attributes:
+                      type: "button"
+                      class: "btn btn-secondary"
+                      data-bs-dismiss: "modal"
+                    content: "Fermer"
+                  - type: button
+                    attributes:
+                      type: "button"
+                      class: "btn btn-primary"
+                    content: "Sauvegarder"
+  
+  # Modal Scrollable
+  - type: h3
+    content: "Modal Scrollable"
+  - type: p
+    content: "Utilisez .modal-dialog-scrollable pour permettre le défilement du contenu du modal."
+  
+  - type: button
+    attributes:
+      type: "button"
+      class: "btn btn-primary"
+      data-bs-toggle: "modal"
+      data-bs-target: "#modalScrollable"
+    content: "Ouvrir le modal scrollable"
+  
+  - type: div
+    attributes:
+      class: "modal fade"
+      id: "modalScrollable"
+      tabindex: "-1"
+      aria-labelledby: "modalScrollableLabel"
+      aria-hidden: "true"
+    content:
+      - type: div
+        attributes:
+          class: "modal-dialog modal-dialog-scrollable"
+        content:
+          - type: div
+            attributes:
+              class: "modal-content"
+            content:
+              - type: div
+                attributes:
+                  class: "modal-header"
+                content:
+                  - type: h5
+                    attributes:
+                      class: "modal-title"
+                      id: "modalScrollableLabel"
+                    content: "Modal Scrollable"
+                  - type: button
+                    attributes:
+                      type: "button"
+                      class: "btn-close"
+                      data-bs-dismiss: "modal"
+                      aria-label: "Close"
+              - type: div
+                attributes:
+                  class: "modal-body"
+                content:
+                  - type: p
+                    content: "Ceci est un modal scrollable."
+                  - type: p
+                    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                  - type: p
+                    content: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+                  - type: p
+                    content: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+              - type: div
+                attributes:
+                  class: "modal-footer"
+                content:
+                  - type: button
+                    attributes:
+                      type: "button"
+                      class: "btn btn-secondary"
+                      data-bs-dismiss: "modal"
+                    content: "Fermer"
+                  - type: button
+                    attributes:
+                      type: "button"
+                      class: "btn btn-primary"
+                    content: "Sauvegarder"
+  
+  # Modal Statique
+  - type: h3
+    content: "Modal Statique"
+  - type: p
+    content: "Utilisez data-bs-backdrop='static' et data-bs-keyboard='false' pour empêcher la fermeture du modal en cliquant à l'extérieur ou en appuyant sur Échap."
+  
+  - type: button
+    attributes:
+      type: "button"
+      class: "btn btn-primary"
+      data-bs-toggle: "modal"
+      data-bs-target: "#modalStatic"
+    content: "Ouvrir le modal statique"
+  
+  - type: div
+    attributes:
+      class: "modal fade"
+      id: "modalStatic"
+      tabindex: "-1"
+      aria-labelledby: "modalStaticLabel"
+      aria-hidden: "true"
+      data-bs-backdrop: "static"
+      data-bs-keyboard: "false"
+    content:
+      - type: div
+        attributes:
+          class: "modal-dialog"
+        content:
+          - type: div
+            attributes:
+              class: "modal-content"
+            content:
+              - type: div
+                attributes:
+                  class: "modal-header"
+                content:
+                  - type: h5
+                    attributes:
+                      class: "modal-title"
+                      id: "modalStaticLabel"
+                    content: "Modal Statique"
+                  - type: button
+                    attributes:
+                      type: "button"
+                      class: "btn-close"
+                      data-bs-dismiss: "modal"
+                      aria-label: "Close"
+              - type: div
+                attributes:
+                  class: "modal-body"
+                content: "Ce modal ne se ferme pas en cliquant à l'extérieur ou en appuyant sur Échap. Vous devez utiliser le bouton 'Fermer'."
+              - type: div
+                attributes:
+                  class: "modal-footer"
+                content:
+                  - type: button
+                    attributes:
+                      type: "button"
+                      class: "btn btn-secondary"
+                      data-bs-dismiss: "modal"
+                    content: "Fermer"
+                  - type: button
+                    attributes:
+                      type: "button"
+                      class: "btn btn-primary"
+                    content: "Sauvegarder"
+  
+  # Affichage du code Reactive-JSON
+  - type: RjBuildDescriber
+    title: "Reactive-JSON build"
+    description:
+      - type: div
+        content: Modals Bootstrap avec différentes variantes (large, extra large, fullscreen, centré, scrollable, statique).
+    toDescribe:
+      renderView:
+        - type: h2
+          content: "Modal Variants Bootstrap"
+        
+        # Vue d'ensemble
+        - type: h3
+          content: "Vue d'ensemble"
+        - type: p
+          content: "Documentation et exemples pour utiliser les différentes variantes de modals Bootstrap."
+        
+        # Modal Large
+        - type: h3
+          content: "Modal Large"
+        - type: p
+          content: "Utilisez .modal-lg pour créer un modal plus large."
+        
+        - type: button
+          attributes:
+            type: "button"
+            class: "btn btn-primary"
+            data-bs-toggle: "modal"
+            data-bs-target: "#modalLarge"
+          content: "Ouvrir le modal large"
+        
+        - type: div
+          attributes:
+            class: "modal fade"
+            id: "modalLarge"
+            tabindex: "-1"
+            aria-labelledby: "modalLargeLabel"
+            aria-hidden: "true"
+          content:
+            - type: div
+              attributes:
+                class: "modal-dialog modal-lg"
+              content:
+                - type: div
+                  attributes:
+                    class: "modal-content"
+                  content:
+                    - type: div
+                      attributes:
+                        class: "modal-header"
+                      content:
+                        - type: h5
+                          attributes:
+                            class: "modal-title"
+                            id: "modalLargeLabel"
+                          content: "Modal Large"
+                        - type: button
+                          attributes:
+                            type: "button"
+                            class: "btn-close"
+                            data-bs-dismiss: "modal"
+                            aria-label: "Close"
+                    - type: div
+                      attributes:
+                        class: "modal-body"
+                      content: "Ceci est un modal large (modal-lg)."
+                    - type: div
+                      attributes:
+                        class: "modal-footer"
+                      content:
+                        - type: button
+                          attributes:
+                            type: "button"
+                            class: "btn btn-secondary"
+                            data-bs-dismiss: "modal"
+                          content: "Fermer"
+                        - type: button
+                          attributes:
+                            type: "button"
+                            class: "btn btn-primary"
+                          content: "Sauvegarder"
+
+        # Modal Extra Large
+        - type: h3
+          content: "Modal Extra Large"
+        - type: p
+          content: "Utilisez .modal-xl pour créer un modal extra large."
+        
+        - type: button
+          attributes:
+            type: "button"
+            class: "btn btn-primary"
+            data-bs-toggle: "modal"
+            data-bs-target: "#modalXl"
+          content: "Ouvrir le modal extra large"
+        
+        - type: div
+          attributes:
+            class: "modal fade"
+            id: "modalXl"
+            tabindex: "-1"
+            aria-labelledby: "modalXlLabel"
+            aria-hidden: "true"
+          content:
+            - type: div
+              attributes:
+                class: "modal-dialog modal-xl"
+              content:
+                - type: div
+                  attributes:
+                    class: "modal-content"
+                  content:
+                    - type: div
+                      attributes:
+                        class: "modal-header"
+                      content:
+                        - type: h5
+                          attributes:
+                            class: "modal-title"
+                            id: "modalXlLabel"
+                          content: "Modal Extra Large"
+                        - type: button
+                          attributes:
+                            type: "button"
+                            class: "btn-close"
+                            data-bs-dismiss: "modal"
+                            aria-label: "Close"
+                    - type: div
+                      attributes:
+                        class: "modal-body"
+                      content: "Ceci est un modal extra large (modal-xl)."
+                    - type: div
+                      attributes:
+                        class: "modal-footer"
+                      content:
+                        - type: button
+                          attributes:
+                            type: "button"
+                            class: "btn btn-secondary"
+                            data-bs-dismiss: "modal"
+                          content: "Fermer"
+                        - type: button
+                          attributes:
+                            type: "button"
+                            class: "btn btn-primary"
+                          content: "Sauvegarder"
+
+        # Modal Fullscreen
+        - type: h3
+          content: "Modal Fullscreen"
+        - type: p
+          content: "Utilisez .modal-fullscreen pour créer un modal qui occupe tout l'écran."
+        
+        - type: button
+          attributes:
+            type: "button"
+            class: "btn btn-primary"
+            data-bs-toggle: "modal"
+            data-bs-target: "#modalFullscreen"
+          content: "Ouvrir le modal fullscreen"
+        
+        - type: div
+          attributes:
+            class: "modal fade"
+            id: "modalFullscreen"
+            tabindex: "-1"
+            aria-labelledby: "modalFullscreenLabel"
+            aria-hidden: "true"
+          content:
+            - type: div
+              attributes:
+                class: "modal-dialog modal-fullscreen"
+              content:
+                - type: div
+                  attributes:
+                    class: "modal-content"
+                  content:
+                    - type: div
+                      attributes:
+                        class: "modal-header"
+                      content:
+                        - type: h5
+                          attributes:
+                            class: "modal-title"
+                            id: "modalFullscreenLabel"
+                          content: "Modal Fullscreen"
+                        - type: button
+                          attributes:
+                            type: "button"
+                            class: "btn-close"
+                            data-bs-dismiss: "modal"
+                            aria-label: "Close"
+                    - type: div
+                      attributes:
+                        class: "modal-body"
+                      content: "Ceci est un modal fullscreen (modal-fullscreen)."
+                    - type: div
+                      attributes:
+                        class: "modal-footer"
+                      content:
+                        - type: button
+                          attributes:
+                            type: "button"
+                            class: "btn btn-secondary"
+                            data-bs-dismiss: "modal"
+                          content: "Fermer"
+                        - type: button
+                          attributes:
+                            type: "button"
+                            class: "btn btn-primary"
+                          content: "Sauvegarder"
+
+        # Modal Centré
+        - type: h3
+          content: "Modal Centré"
+        - type: p
+          content: "Utilisez .modal-dialog-centered pour centrer verticalement le modal."
+        
+        - type: button
+          attributes:
+            type: "button"
+            class: "btn btn-primary"
+            data-bs-toggle: "modal"
+            data-bs-target: "#modalCentered"
+          content: "Ouvrir le modal centré"
+        
+        - type: div
+          attributes:
+            class: "modal fade"
+            id: "modalCentered"
+            tabindex: "-1"
+            aria-labelledby: "modalCenteredLabel"
+            aria-hidden: "true"
+          content:
+            - type: div
+              attributes:
+                class: "modal-dialog modal-dialog-centered"
+              content:
+                - type: div
+                  attributes:
+                    class: "modal-content"
+                  content:
+                    - type: div
+                      attributes:
+                        class: "modal-header"
+                      content:
+                        - type: h5
+                          attributes:
+                            class: "modal-title"
+                            id: "modalCenteredLabel"
+                          content: "Modal Centré"
+                        - type: button
+                          attributes:
+                            type: "button"
+                            class: "btn-close"
+                            data-bs-dismiss: "modal"
+                            aria-label: "Close"
+                    - type: div
+                      attributes:
+                        class: "modal-body"
+                      content: "Ceci est un modal centré verticalement."
+                    - type: div
+                      attributes:
+                        class: "modal-footer"
+                      content:
+                        - type: button
+                          attributes:
+                            type: "button"
+                            class: "btn btn-secondary"
+                            data-bs-dismiss: "modal"
+                          content: "Fermer"
+                        - type: button
+                          attributes:
+                            type: "button"
+                            class: "btn btn-primary"
+                          content: "Sauvegarder"
+
+        # Modal Scrollable
+        - type: h3
+          content: "Modal Scrollable"
+        - type: p
+          content: "Utilisez .modal-dialog-scrollable pour permettre le défilement du contenu du modal."
+        
+        - type: button
+          attributes:
+            type: "button"
+            class: "btn btn-primary"
+            data-bs-toggle: "modal"
+            data-bs-target: "#modalScrollable"
+          content: "Ouvrir le modal scrollable"
+        
+        - type: div
+          attributes:
+            class: "modal fade"
+            id: "modalScrollable"
+            tabindex: "-1"
+            aria-labelledby: "modalScrollableLabel"
+            aria-hidden: "true"
+          content:
+            - type: div
+              attributes:
+                class: "modal-dialog modal-dialog-scrollable"
+              content:
+                - type: div
+                  attributes:
+                    class: "modal-content"
+                  content:
+                    - type: div
+                      attributes:
+                        class: "modal-header"
+                      content:
+                        - type: h5
+                          attributes:
+                            class: "modal-title"
+                            id: "modalScrollableLabel"
+                          content: "Modal Scrollable"
+                        - type: button
+                          attributes:
+                            type: "button"
+                            class: "btn-close"
+                            data-bs-dismiss: "modal"
+                            aria-label: "Close"
+                    - type: div
+                      attributes:
+                        class: "modal-body"
+                      content:
+                        - type: p
+                          content: "Ceci est un modal scrollable."
+                        - type: p
+                          content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        - type: p
+                          content: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+                        - type: p
+                          content: "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                    - type: div
+                      attributes:
+                        class: "modal-footer"
+                      content:
+                        - type: button
+                          attributes:
+                            type: "button"
+                            class: "btn btn-secondary"
+                            data-bs-dismiss: "modal"
+                          content: "Fermer"
+                        - type: button
+                          attributes:
+                            type: "button"
+                            class: "btn btn-primary"
+                          content: "Sauvegarder"
+
+        # Modal Statique
+        - type: h3
+          content: "Modal Statique"
+        - type: p
+          content: "Utilisez data-bs-backdrop='static' et data-bs-keyboard='false' pour empêcher la fermeture du modal en cliquant à l'extérieur ou en appuyant sur Échap."
+        
+        - type: button
+          attributes:
+            type: "button"
+            class: "btn btn-primary"
+            data-bs-toggle: "modal"
+            data-bs-target: "#modalStatic"
+          content: "Ouvrir le modal statique"
+        
+        - type: div
+          attributes:
+            class: "modal fade"
+            id: "modalStatic"
+            tabindex: "-1"
+            aria-labelledby: "modalStaticLabel"
+            aria-hidden: "true"
+            data-bs-backdrop: "static"
+            data-bs-keyboard: "false"
+          content:
+            - type: div
+              attributes:
+                class: "modal-dialog"
+              content:
+                - type: div
+                  attributes:
+                    class: "modal-content"
+                  content:
+                    - type: div
+                      attributes:
+                        class: "modal-header"
+                      content:
+                        - type: h5
+                          attributes:
+                            class: "modal-title"
+                            id: "modalStaticLabel"
+                          content: "Modal Statique"
+                        - type: button
+                          attributes:
+                            type: "button"
+                            class: "btn-close"
+                            data-bs-dismiss: "modal"
+                            aria-label: "Close"
+                    - type: div
+                      attributes:
+                        class: "modal-body"
+                      content: "Ce modal ne se ferme pas en cliquant à l'extérieur ou en appuyant sur Échap. Vous devez utiliser le bouton 'Fermer'."
+                    - type: div
+                      attributes:
+                        class: "modal-footer"
+                      content:
+                        - type: button
+                          attributes:
+                            type: "button"
+                            class: "btn btn-secondary"
+                            data-bs-dismiss: "modal"
+                          content: "Fermer"
+                        - type: button
+                          attributes:
+                            type: "button"
+                            class: "btn btn-primary"
+                          content: "Sauvegarder"
+
+      templates: {}
+
+      data: {}
+
+templates: {}
+
+data: {} 

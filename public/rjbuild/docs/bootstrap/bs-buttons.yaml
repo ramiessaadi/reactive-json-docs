@@ -1,0 +1,249 @@
+renderView:
+  - type: h2
+    content: "Buttons Bootstrap"
+  # Affichage du code Reactive-JSON
+  - type: RjBuildDescriber
+    description:
+      - type: div
+        content: Boutons Bootstrap avec différents styles, tailles et états.
+    toDescribe:
+      renderView:
+        - type: h2
+          content: "Buttons Bootstrap"
+        
+        # Exemples de boutons
+        - type: h3
+          content: "Exemples de boutons"
+        - type: p
+          content: "Bootstrap inclut plusieurs styles de boutons prédéfinis, chacun servant son propre but sémantique."
+        
+        # Boutons de base
+        - type: div
+          attributes:
+            class: "gap-3 d-flex flex-wrap"
+          content:
+            - type: Switch
+              content: ~.basicButtons
+              singleOption:
+                load: buttonTemplate
+
+        # Boutons outline
+        - type: h3
+          content: "Boutons outline"
+        - type: p
+          content: "Remplacez les classes de modificateur par défaut par les classes .btn-outline-* pour supprimer tous les arrière-plans."
+        
+        - type: div
+          attributes:
+            class: "mb-3 gap-3 d-flex flex-wrap"
+          content:
+            - type: Switch
+              content: ~.outlineButtons
+              singleOption:
+                load: buttonTemplate
+
+        # Tailles de boutons
+        - type: h3
+          content: "Tailles de boutons"
+        - type: p
+          content: "Ajoutez .btn-lg ou .btn-sm pour des tailles supplémentaires."
+        
+        - type: div
+          attributes:
+            class: "mb-3 gap-3 d-flex flex-wrap"
+          content:
+            - type: h4
+              content: "Grands boutons"
+            - type: Switch
+              content: ~.largeButtons
+              singleOption:
+                load: buttonTemplate
+        
+        - type: div
+          attributes:
+            class: "mb-3 gap-3 d-flex flex-wrap"
+          content:
+            - type: h4
+              content: "Petits boutons"
+            - type: Switch
+              content: ~.smallButtons
+              singleOption:
+                load: buttonTemplate
+
+        # Boutons désactivés
+        - type: h3
+          content: "État désactivé"
+        - type: p
+          content: "Rendez les boutons inactifs en ajoutant l'attribut disabled."
+        
+        - type: div
+          attributes:
+            class: "mb-3 gap-3 d-flex flex-wrap"
+          content:
+            - type: Switch
+              content: ~.disabledButtons
+              singleOption:
+                load: buttonTemplate
+
+        # Boutons en bloc
+        - type: h3
+          content: "Boutons en bloc"
+        - type: p
+          content: "Créez des boutons qui s'étendent sur toute la largeur de leur parent."
+        
+        - type: div
+          attributes:
+            class: "mb-3 gap-3 d-flex flex-wrap"
+          content:
+            - type: Switch
+              content: ~.blockButtons
+              singleOption:
+                load: buttonTemplate
+
+      templates:
+        buttonTemplate:
+          type: button
+          attributes:
+            type: "button"
+            class: ~.className
+            disabled: ~.disabled
+          content: ~.text
+
+      data:
+        basicButtons:
+          - text: "Primary"
+            className: "btn btn-primary"
+          - text: "Secondary"
+            className: "btn btn-secondary"
+          - text: "Success"
+            className: "btn btn-success"
+          - text: "Danger"
+            className: "btn btn-danger"
+          - text: "Warning"
+            className: "btn btn-warning"
+          - text: "Info"
+            className: "btn btn-info"
+          - text: "Light"
+            className: "btn btn-light"
+          - text: "Dark"
+            className: "btn btn-dark"
+          - text: "Link"
+            className: "btn btn-link"
+        
+        outlineButtons:
+          - text: "Primary"
+            className: "btn btn-outline-primary"
+          - text: "Secondary"
+            className: "btn btn-outline-secondary"
+          - text: "Success"
+            className: "btn btn-outline-success"
+          - text: "Danger"
+            className: "btn btn-outline-danger"
+          - text: "Warning"
+            className: "btn btn-outline-warning"
+          - text: "Info"
+            className: "btn btn-outline-info"
+          - text: "Light"
+            className: "btn btn-outline-light"
+          - text: "Dark"
+            className: "btn btn-outline-dark"
+        
+        largeButtons:
+          - text: "Large button"
+            className: "btn btn-primary btn-lg"
+          - text: "Large button"
+            className: "btn btn-secondary btn-lg"
+        
+        smallButtons:
+          - text: "Small button"
+            className: "btn btn-primary btn-sm"
+          - text: "Small button"
+            className: "btn btn-secondary btn-sm"
+        
+        disabledButtons:
+          - text: "Primary button"
+            className: "btn btn-lg btn-primary"
+            disabled: true
+          - text: "Button"
+            className: "btn btn-secondary btn-lg"
+            disabled: true
+        
+        blockButtons:
+          - text: "Button en bloc"
+            className: "btn btn-primary btn-lg d-grid gap-2"
+          - text: "Button en bloc"
+            className: "btn btn-secondary btn-lg d-grid gap-2"
+
+templates:
+  buttonTemplate:
+    type: button
+    attributes:
+      type: "button"
+      class: ~.className
+      disabled: ~.disabled
+    content: ~.text
+
+data:
+  basicButtons:
+    - text: "Primary"
+      className: "btn btn-primary"
+    - text: "Secondary"
+      className: "btn btn-secondary"
+    - text: "Success"
+      className: "btn btn-success"
+    - text: "Danger"
+      className: "btn btn-danger"
+    - text: "Warning"
+      className: "btn btn-warning"
+    - text: "Info"
+      className: "btn btn-info"
+    - text: "Light"
+      className: "btn btn-light"
+    - text: "Dark"
+      className: "btn btn-dark"
+    - text: "Link"
+      className: "btn btn-link"
+  
+  outlineButtons:
+    - text: "Primary"
+      className: "btn btn-outline-primary"
+    - text: "Secondary"
+      className: "btn btn-outline-secondary"
+    - text: "Success"
+      className: "btn btn-outline-success"
+    - text: "Danger"
+      className: "btn btn-outline-danger"
+    - text: "Warning"
+      className: "btn btn-outline-warning"
+    - text: "Info"
+      className: "btn btn-outline-info"
+    - text: "Light"
+      className: "btn btn-outline-light"
+    - text: "Dark"
+      className: "btn btn-outline-dark"
+  
+  largeButtons:
+    - text: "Large button"
+      className: "btn btn-primary btn-lg"
+    - text: "Large button"
+      className: "btn btn-secondary btn-lg"
+  
+  smallButtons:
+    - text: "Small button"
+      className: "btn btn-primary btn-sm"
+    - text: "Small button"
+      className: "btn btn-secondary btn-sm"
+  
+  disabledButtons:
+    - text: "Primary button"
+      className: "btn btn-lg btn-primary"
+      disabled: true
+    - text: "Button"
+      className: "btn btn-secondary btn-lg"
+      disabled: true
+  
+  blockButtons:
+    - text: "Button en bloc"
+      className: "btn btn-primary btn-lg d-grid gap-2"
+    - text: "Button en bloc"
+      className: "btn btn-secondary btn-lg d-grid gap-2" 

@@ -1,0 +1,353 @@
+renderView:
+  - type: h2
+    content: "Sidebars Bootstrap" 
+  # Affichage du code Reactive-JSON
+  - type: RjBuildDescriber
+    title: "Reactive-JSON build"
+    description:
+      - type: div
+        content: Sidebars Bootstrap avec versions de base, sous-menus et icônes.
+    toDescribe:
+      renderView:
+        - type: h2
+          content: "Sidebars Bootstrap"
+        
+        # Vue d'ensemble
+        - type: h3
+          content: "Vue d'ensemble"
+        - type: p
+          content: "Documentation et exemples pour utiliser les sidebars Bootstrap avec navigation et sous-menus."
+        
+        # Sidebar de base
+        - type: h3
+          content: "Sidebar de base"
+        - type: p
+          content: "Une sidebar simple avec navigation verticale."
+        
+        - type: div
+          attributes:
+            class: "d-flex flex-column flex-shrink-0 p-3 bg-light"
+            style:
+              width: "280px"
+          content:
+            - type: a
+              attributes:
+                href: "/"
+                class: "d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
+              content:
+                - type: i
+                  attributes:
+                    class: "bi bi-bootstrap me-2"
+                - type: span
+                  attributes:
+                    class: "fs-4"
+                  content: "Sidebar"
+            - type: hr
+            - type: ul
+              attributes:
+                class: "nav nav-pills flex-column mb-auto"
+              content:
+                - type: Switch
+                  content: ~.sidebarItems
+                  singleOption:
+                    load: sidebarItemSimpleTemplate
+
+        # Sidebar avec sous-menus
+        - type: h3
+          content: "Sidebar avec sous-menus"
+        - type: p
+          content: "Une sidebar avec navigation hiérarchique et sous-menus."
+        
+        - type: div
+          attributes:
+            class: "d-flex flex-column flex-shrink-0 p-3 bg-light"
+            style:
+              width: "280px"
+          content:
+            - type: a
+              attributes:
+                href: "/"
+                class: "d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
+              content:
+                - type: i
+                  attributes:
+                    class: "bi bi-bootstrap me-2"
+                - type: span
+                  attributes:
+                    class: "fs-4"
+                  content: "Sidebar"
+            - type: hr
+            - type: ul
+              attributes:
+                class: "nav nav-pills flex-column mb-auto"
+              content:
+                - type: Switch
+                  content: ~.sidebarNested
+                  singleOption:
+                    load: sidebarItemTemplate
+
+        # Sidebar avec icônes
+        - type: h3
+          content: "Sidebar avec icônes"
+        - type: p
+          content: "Une sidebar avec des icônes Bootstrap Icons."
+        
+        - type: div
+          attributes:
+            class: "d-flex flex-column flex-shrink-0 p-3 bg-dark text-white"
+            style:
+              width: "280px"
+          content:
+            - type: a
+              attributes:
+                href: "/"
+                class: "d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+              content:
+                - type: i
+                  attributes:
+                    class: "bi bi-bootstrap me-2"
+                - type: span
+                  attributes:
+                    class: "fs-4"
+                  content: "Sidebar"
+            - type: hr
+            - type: ul
+              attributes:
+                class: "nav nav-pills flex-column mb-auto"
+              content:
+                - type: Switch
+                  content: ~.sidebarItems
+                  singleOption:
+                    load: sidebarItemDarkTemplate
+
+      templates:
+        sidebarItemSimpleTemplate:
+          type: li
+          attributes:
+            class: "nav-item"
+          content:
+            - type: a
+              attributes:
+                href: ~.href
+                class: "nav-link link-dark"
+              content:
+                - type: i
+                  attributes:
+                    class: "bi ~.icon me-2"
+                - type: span
+                  content: ~.label
+
+        sidebarItemTemplate:
+          type: li
+          attributes:
+            class: "nav-item"
+          content:
+            - type: a
+              attributes:
+                href: ~.href
+                class: "nav-link link-dark"
+              content:
+                - type: i
+                  attributes:
+                    class: "bi ~.icon me-2"
+                - type: span
+                  content: ~.label
+            - type: If
+              condition: ~.children
+              then:
+                - type: ul
+                  attributes:
+                    class: "nav flex-column ms-3"
+                  content:
+                    - type: Switch
+                      content: ~.children
+                      singleOption:
+                        type: li
+                        attributes:
+                          class: "nav-item"
+                        content:
+                          - type: a
+                            attributes:
+                              href: ~.href
+                              class: "nav-link link-secondary"
+                            content: ~.label
+
+        sidebarItemDarkTemplate:
+          type: li
+          attributes:
+            class: "nav-item"
+          content:
+            - type: a
+              attributes:
+                href: ~.href
+                class: "nav-link text-white"
+              content:
+                - type: i
+                  attributes:
+                    class: "bi ~.icon me-2"
+                - type: span
+                  content: ~.label
+
+      data:
+        sidebarItems:
+          - icon: "bi-house"
+            label: "Home"
+            href: "/"
+          - icon: "bi-speedometer2"
+            label: "Dashboard"
+            href: "/dashboard"
+          - icon: "bi-table"
+            label: "Orders"
+            href: "/orders"
+          - icon: "bi-box"
+            label: "Products"
+            href: "/products"
+          - icon: "bi-people"
+            label: "Customers"
+            href: "/customers"
+        sidebarNested:
+          - label: "Home"
+            icon: "bi-house"
+            href: "/"
+          - label: "Dashboard"
+            icon: "bi-speedometer2"
+            children:
+              - label: "Overview"
+                href: "/dashboard/overview"
+              - label: "Updates"
+                href: "/dashboard/updates"
+              - label: "Reports"
+                href: "/dashboard/reports"
+          - label: "Orders"
+            icon: "bi-table"
+            children:
+              - label: "New"
+                href: "/orders/new"
+              - label: "Processed"
+                href: "/orders/processed"
+              - label: "Shipped"
+                href: "/orders/shipped"
+              - label: "Returned"
+                href: "/orders/returned"
+          - label: "Products"
+            icon: "bi-box"
+            href: "/products"
+          - label: "Customers"
+            icon: "bi-people"
+            href: "/customers"
+
+templates:
+  sidebarItemSimpleTemplate:
+    type: li
+    attributes:
+      class: "nav-item"
+    content:
+      - type: a
+        attributes:
+          href: ~.href
+          class: "nav-link link-dark"
+        content:
+          - type: i
+            attributes:
+              class: "bi ~.icon me-2"
+          - type: span
+            content: ~.label
+
+  sidebarItemTemplate:
+    type: li
+    attributes:
+      class: "nav-item"
+    content:
+      - type: a
+        attributes:
+          href: ~.href
+          class: "nav-link link-dark"
+        content:
+          - type: i
+            attributes:
+              class: "bi ~.icon me-2"
+          - type: span
+            content: ~.label
+      - type: If
+        condition: ~.children
+        then:
+          - type: ul
+            attributes:
+              class: "nav flex-column ms-3"
+            content:
+              - type: Switch
+                content: ~.children
+                singleOption:
+                  type: li
+                  attributes:
+                    class: "nav-item"
+                  content:
+                    - type: a
+                      attributes:
+                        href: ~.href
+                        class: "nav-link link-secondary"
+                      content: ~.label
+
+  sidebarItemDarkTemplate:
+    type: li
+    attributes:
+      class: "nav-item"
+    content:
+      - type: a
+        attributes:
+          href: ~.href
+          class: "nav-link text-white"
+        content:
+          - type: i
+            attributes:
+              class: "bi ~.icon me-2"
+          - type: span
+            content: ~.label
+
+data:
+  sidebarItems:
+    - icon: "bi-house"
+      label: "Home"
+      href: "/"
+    - icon: "bi-speedometer2"
+      label: "Dashboard"
+      href: "/dashboard"
+    - icon: "bi-table"
+      label: "Orders"
+      href: "/orders"
+    - icon: "bi-box"
+      label: "Products"
+      href: "/products"
+    - icon: "bi-people"
+      label: "Customers"
+      href: "/customers"
+  sidebarNested:
+    - label: "Home"
+      icon: "bi-house"
+      href: "/"
+    - label: "Dashboard"
+      icon: "bi-speedometer2"
+      children:
+        - label: "Overview"
+          href: "/dashboard/overview"
+        - label: "Updates"
+          href: "/dashboard/updates"
+        - label: "Reports"
+          href: "/dashboard/reports"
+    - label: "Orders"
+      icon: "bi-table"
+      children:
+        - label: "New"
+          href: "/orders/new"
+        - label: "Processed"
+          href: "/orders/processed"
+        - label: "Shipped"
+          href: "/orders/shipped"
+        - label: "Returned"
+          href: "/orders/returned"
+    - label: "Products"
+      icon: "bi-box"
+      href: "/products"
+    - label: "Customers"
+      icon: "bi-people"
+      href: "/customers" 

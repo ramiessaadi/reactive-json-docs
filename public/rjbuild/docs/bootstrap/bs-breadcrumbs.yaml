@@ -1,0 +1,104 @@
+renderView:
+  - type: h2
+    content: "Breadcrumbs Bootstrap"
+
+  # Affichage du code Reactive-JSON
+  - type: RjBuildDescriber
+    description:
+      - type: div
+        content: Breadcrumbs dynamiques générés depuis les données YAML avec templates.
+    toDescribe:
+      renderView:      
+        
+        # Version dynamique avec template
+        - type: nav
+          attributes:
+            aria-label: "breadcrumb"
+            style:
+              padding: "0.75rem 1rem"
+              backgroundColor: "#f8f9fa"
+              borderRadius: "0.375rem"
+          content:
+            - type: ol
+              attributes:
+                style:
+                  display: "flex"
+                  flexWrap: "wrap"
+                  padding: 0
+                  margin: 0
+                  listStyle: "none"
+                  backgroundColor: "transparent"
+                  borderRadius: 0
+              content:
+                - type: Switch
+                  content: ~.breadcrumbItems
+                  singleOption:
+                    load: breadcrumbItemTemplate
+
+      templates:
+        breadcrumbItemTemplate:
+          type: li
+          attributes:
+            style:
+              display: "flex"
+              alignItems: "center"
+          content:
+            - type: a
+              attributes:
+                href: ~.href
+                style:
+                  color: "#0d6efd"
+                  textDecoration: "none"
+                  padding: "0.5rem 0.75rem"
+                  borderRadius: "0.375rem"
+                  transition: "color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out"
+              content: ~.label
+            - type: span
+              attributes:
+                style:
+                  color: "#6c757d"
+                  padding: "0 0.5rem"
+              content: "/"
+
+      data:
+        breadcrumbItems:
+          - label: "Home"
+            href: "/docs"
+          - label: "Bootstrap"
+            href: "/docs/bootstrap"
+          - label: "Breadcrumbs"
+            active: true
+
+templates:
+  breadcrumbItemTemplate:
+    type: li
+    attributes:
+      style:
+        display: "flex"
+        alignItems: "center"
+    content:
+      - type: a
+        attributes:
+          href: ~.href
+          style:
+            color: "#0d6efd"
+            textDecoration: "none"
+            padding: "0.5rem 0.75rem"
+            borderRadius: "0.375rem"
+            transition: "color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out"
+        content: ~.label
+      - type: span
+        attributes:
+          style:
+            color: "#6c757d"
+            padding: "0 0.5rem"
+        content: "/"
+
+data:
+  breadcrumbItems:
+    - label: "Home"
+      href: "/docs"
+    - label: "Bootstrap"
+      href: "/docs/bootstrap"
+    - label: "Breadcrumbs"
+      active: true 

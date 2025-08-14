@@ -1,0 +1,392 @@
+renderView:
+  - type: h2
+    content: "Table Bootstrap"
+  # Affichage du code Reactive-JSON
+  - type: RjBuildDescriber
+    title: "Reactive-JSON build"
+    description:
+      - type: div
+        content: Tables Bootstrap avec différents styles et options responsives.
+    toDescribe:
+      renderView:
+        - type: h2
+          content: "Table Bootstrap"
+        
+        # Vue d'ensemble
+        - type: h3
+          content: "Vue d'ensemble"
+        - type: p
+          content: "Documentation et exemples pour utiliser les tableaux Bootstrap pour afficher des données tabulaires."
+        
+        # Table de base
+        - type: h3
+          content: "Table de base"
+        - type: p
+          content: "Utilisez la classe .table pour un style de base léger et un padding horizontal."
+        
+        - type: table
+          attributes:
+            class: "table"
+          content:
+            - type: thead
+              content:
+                - type: tr
+                  content:
+                    - type: th
+                      attributes:
+                        scope: "col"
+                      content: "#"
+                    - type: th
+                      attributes:
+                        scope: "col"
+                      content: "Prénom"
+                    - type: th
+                      attributes:
+                        scope: "col"
+                      content: "Nom"
+                    - type: th
+                      attributes:
+                        scope: "col"
+                      content: "Nom d'utilisateur"
+            - type: tbody
+              content:
+                - type: tr
+                  content:
+                    - type: th
+                      attributes:
+                        scope: "row"
+                      content: "1"
+                    - type: td
+                      content: "Mark"
+                    - type: td
+                      content: "Otto"
+                    - type: td
+                      content: "@mdo"
+                - type: tr
+                  content:
+                    - type: th
+                      attributes:
+                        scope: "row"
+                      content: "2"
+                    - type: td
+                      content: "Jacob"
+                    - type: td
+                      content: "Thornton"
+                    - type: td
+                      content: "@fat"
+                - type: tr
+                  content:
+                    - type: th
+                      attributes:
+                        scope: "row"
+                      content: "3"
+                    - type: td
+                      attributes:
+                        colspan: "2"
+                      content: "Larry the Bird"
+                    - type: td
+                      content: "@twitter"
+
+        # Table avec rayures
+        - type: h3
+          content: "Table avec rayures"
+        - type: p
+          content: "Utilisez .table-striped pour ajouter des rayures zebra à n'importe quelle ligne du tableau dans le tbody."
+        
+        - type: table
+          attributes:
+            class: "table table-striped"
+          content:
+            - type: thead
+              content:
+                - type: tr
+                  content:
+                    - type: th
+                      attributes:
+                        scope: "col"
+                      content: "#"
+                    - type: th
+                      attributes:
+                        scope: "col"
+                      content: "Prénom"
+                    - type: th
+                      attributes:
+                        scope: "col"
+                      content: "Nom"
+                    - type: th
+                      attributes:
+                        scope: "col"
+                      content: "Nom d'utilisateur"
+            - type: tbody
+              content:
+                - type: tr
+                  content:
+                    - type: th
+                      attributes:
+                        scope: "row"
+                      content: "1"
+                    - type: td
+                      content: "Mark"
+                    - type: td
+                      content: "Otto"
+                    - type: td
+                      content: "@mdo"
+                - type: tr
+                  content:
+                    - type: th
+                      attributes:
+                        scope: "row"
+                      content: "2"
+                    - type: td
+                      content: "Jacob"
+                    - type: td
+                      content: "Thornton"
+                    - type: td
+                      content: "@fat"
+                - type: tr
+                  content:
+                    - type: th
+                      attributes:
+                        scope: "row"
+                      content: "3"
+                    - type: td
+                      content: "Larry"
+                    - type: td
+                      content: "Bird"
+                    - type: td
+                      content: "@twitter"
+
+        # Table avec bordures
+        - type: h3
+          content: "Table avec bordures"
+        - type: p
+          content: "Ajoutez .table-bordered pour des bordures sur tous les côtés du tableau et de toutes les cellules."
+        
+        - type: table
+          attributes:
+            class: "table table-bordered"
+          content:
+            - type: thead
+              content:
+                - type: tr
+                  content:
+                    - type: th
+                      attributes:
+                        scope: "col"
+                      content: "#"
+                    - type: th
+                      attributes:
+                        scope: "col"
+                      content: "Prénom"
+                    - type: th
+                      attributes:
+                        scope: "col"
+                      content: "Nom"
+                    - type: th
+                      attributes:
+                        scope: "col"
+                      content: "Nom d'utilisateur"
+            - type: tbody
+              content:
+                - type: tr
+                  content:
+                    - type: th
+                      attributes:
+                        scope: "row"
+                      content: "1"
+                    - type: td
+                      content: "Mark"
+                    - type: td
+                      content: "Otto"
+                    - type: td
+                      content: "@mdo"
+                - type: tr
+                  content:
+                    - type: th
+                      attributes:
+                        scope: "row"
+                      content: "2"
+                    - type: td
+                      content: "Jacob"
+                    - type: td
+                      content: "Thornton"
+                    - type: td
+                      content: "@fat"
+                - type: tr
+                  content:
+                    - type: th
+                      attributes:
+                        scope: "row"
+                      content: "3"
+                    - type: td
+                      content: "Larry"
+                    - type: td
+                      content: "Bird"
+                    - type: td
+                      content: "@twitter"
+
+        # Table avec hover
+        - type: h3
+          content: "Table avec hover"
+        - type: p
+          content: "Ajoutez .table-hover pour activer un état de survol sur les lignes du tableau dans le tbody."
+        
+        - type: table
+          attributes:
+            class: "table table-hover"
+          content:
+            - type: thead
+              content:
+                - type: tr
+                  content:
+                    - type: th
+                      attributes:
+                        scope: "col"
+                      content: "#"
+                    - type: th
+                      attributes:
+                        scope: "col"
+                      content: "Prénom"
+                    - type: th
+                      attributes:
+                        scope: "col"
+                      content: "Nom"
+                    - type: th
+                      attributes:
+                        scope: "col"
+                      content: "Nom d'utilisateur"
+            - type: tbody
+              content:
+                - type: tr
+                  content:
+                    - type: th
+                      attributes:
+                        scope: "row"
+                      content: "1"
+                    - type: td
+                      content: "Mark"
+                    - type: td
+                      content: "Otto"
+                    - type: td
+                      content: "@mdo"
+                - type: tr
+                  content:
+                    - type: th
+                      attributes:
+                        scope: "row"
+                      content: "2"
+                    - type: td
+                      content: "Jacob"
+                    - type: td
+                      content: "Thornton"
+                    - type: td
+                      content: "@fat"
+                - type: tr
+                  content:
+                    - type: th
+                      attributes:
+                        scope: "row"
+                      content: "3"
+                    - type: td
+                      content: "Larry"
+                    - type: td
+                      content: "Bird"
+                    - type: td
+                      content: "@twitter"
+
+        # Table responsive
+        - type: h3
+          content: "Table responsive"
+        - type: p
+          content: "Créez des tableaux responsives en les enveloppant dans .table-responsive pour faire défiler horizontalement sur tous les écrans."
+        
+        - type: div
+          attributes:
+            class: "table-responsive"
+          content:
+            - type: table
+              attributes:
+                class: "table"
+              content:
+                - type: thead
+                  content:
+                    - type: tr
+                      content:
+                        - type: th
+                          attributes:
+                            scope: "col"
+                          content: "#"
+                        - type: th
+                          attributes:
+                            scope: "col"
+                          content: "Titre"
+                        - type: th
+                          attributes:
+                            scope: "col"
+                          content: "Titre"
+                        - type: th
+                          attributes:
+                            scope: "col"
+                          content: "Titre"
+                        - type: th
+                          attributes:
+                            scope: "col"
+                          content: "Titre"
+                        - type: th
+                          attributes:
+                            scope: "col"
+                          content: "Titre"
+                        - type: th
+                          attributes:
+                            scope: "col"
+                          content: "Titre"
+                        - type: th
+                          attributes:
+                            scope: "col"
+                          content: "Titre"
+                        - type: th
+                          attributes:
+                            scope: "col"
+                          content: "Titre"
+                        - type: th
+                          attributes:
+                            scope: "col"
+                          content: "Titre"
+                        - type: th
+                          attributes:
+                            scope: "col"
+                          content: "Titre"
+                - type: tbody
+                  content:
+                    - type: tr
+                      content:
+                        - type: th
+                          attributes:
+                            scope: "row"
+                          content: "1"
+                        - type: td
+                          content: "Cellule"
+                        - type: td
+                          content: "Cellule"
+                        - type: td
+                          content: "Cellule"
+                        - type: td
+                          content: "Cellule"
+                        - type: td
+                          content: "Cellule"
+                        - type: td
+                          content: "Cellule"
+                        - type: td
+                          content: "Cellule"
+                        - type: td
+                          content: "Cellule"
+                        - type: td
+                          content: "Cellule"
+
+      templates: {}
+
+      data: {}
+
+templates: {}
+
+data: {} 
